@@ -55,6 +55,7 @@
     font-size: 14px; font-weight: 400; cursor: pointer;
     color: #c6c6c6; border-left: 3px solid transparent;
     line-height: 1.4;
+    transition: background .12s, border-left-color .12s, color .12s;
   }
   .nav-item label:hover { background: #262626; color: #f4f4f4; }
   .nav-item .nav-num { font-size: 11px; font-weight: 500; color: #6f6f6f; display: block; margin-bottom: 2px; letter-spacing: .02em; }
@@ -84,13 +85,17 @@
   }
   .content-wrap { max-width: 720px; margin: 0 auto; }
 
-  /* ── Pages — show/hide ── */
+  /* ── Pages — show/hide + fade in ── */
   .pg { display: none; }
-  #p0:checked ~ .layout .pg-0 { display: block; }
-  #p1:checked ~ .layout .pg-1 { display: block; }
-  #p2:checked ~ .layout .pg-2 { display: block; }
-  #p3:checked ~ .layout .pg-3 { display: block; }
-  #p4:checked ~ .layout .pg-4 { display: block; }
+  #p0:checked ~ .layout .pg-0 { display: block; animation: pgIn .18s ease; }
+  #p1:checked ~ .layout .pg-1 { display: block; animation: pgIn .18s ease; }
+  #p2:checked ~ .layout .pg-2 { display: block; animation: pgIn .18s ease; }
+  #p3:checked ~ .layout .pg-3 { display: block; animation: pgIn .18s ease; }
+  #p4:checked ~ .layout .pg-4 { display: block; animation: pgIn .18s ease; }
+  @keyframes pgIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0);   }
+  }
 
   /* ── Header ── */
   .header { border-bottom: 1px solid #e0e0e0; padding-bottom: 20px; margin-bottom: 32px; }
@@ -106,8 +111,8 @@
 
   /* ── Contents grid (home page) ── */
   .contents-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 24px; background: #e0e0e0; border: 1px solid #e0e0e0; }
-  .ci { padding: 20px; background: #ffffff; cursor: pointer; border-left: 4px solid transparent; }
-  .ci:hover { background: #e8e8e8; }
+  .ci { padding: 20px; background: #ffffff; cursor: pointer; border-left: 4px solid transparent; transition: background .12s, box-shadow .12s, transform .12s; }
+  .ci:hover { background: #f0f0f0; box-shadow: 0 2px 8px rgba(0,0,0,.08); transform: translateY(-1px); }
   .ci.blue   { border-left-color: #0f62fe; }
   .ci.green  { border-left-color: #24a148; }
   .ci.orange { border-left-color: #ff832b; }
@@ -135,7 +140,8 @@
   .ex-sub   { font-size: 14px; color: #525252; margin-top: 4px; }
 
   /* ── Sections ── */
-  .section { margin-bottom: 36px; background: #ffffff; border: 1px solid #e0e0e0; overflow: hidden; }
+  .section { margin-bottom: 36px; background: #ffffff; border: 1px solid #e0e0e0; overflow: hidden; transition: box-shadow .15s; }
+  .section:hover { box-shadow: 0 2px 8px rgba(0,0,0,.07); }
   .section-label {
     font-size: 11px; font-weight: 600; text-transform: uppercase;
     letter-spacing: .06em; color: #525252;
@@ -194,10 +200,15 @@
     display: flex; align-items: center; gap: 8px;
     user-select: none;
   }
-  details.tip-box > summary::before { content: "▶"; font-size: 9px; color: #684e00; flex-shrink: 0; }
-  details.try-box > summary::before { content: "▶"; font-size: 9px; color: #198038; flex-shrink: 0; }
-  details.tip-box[open] > summary::before,
-  details.try-box[open] > summary::before { content: "▼"; }
+  details.tip-box > summary::before,
+  details.try-box > summary::before {
+    content: "▶"; font-size: 9px; flex-shrink: 0;
+    display: inline-block;
+    transition: transform .15s ease;
+  }
+  details.tip-box > summary::before { color: #684e00; }
+  details.try-box > summary::before { color: #198038; }
+  details[open] > summary::before { transform: rotate(90deg); }
   details.tip-box > summary { color: #684e00; }
   details.try-box > summary { color: #198038; }
 
@@ -225,14 +236,40 @@
     background: #ffffff; border: 1px solid #8d8d8d;
     font-size: 14px; font-weight: 400; cursor: pointer; color: #161616;
     font-family: "IBM Plex Sans", system-ui, sans-serif;
+    transition: background .12s, transform .1s, box-shadow .12s;
   }
   .page-nav label:hover { background: #e8e8e8; }
+  .page-nav label:active { transform: translateY(1px); box-shadow: none; }
   .page-nav label.next { background: #0f62fe; color: #ffffff; border-color: #0f62fe; font-weight: 600; }
   .page-nav label.next:hover { background: #0353e9; border-color: #0353e9; }
   .page-nav .spacer { flex: 1; }
 
   /* ── Run note ── */
   .run-note { font-size: 13px; background: #ffffff; border: 1px solid #e0e0e0; border-left: 4px solid #0f62fe; padding: 12px 16px; margin-bottom: 28px; }
+
+  /* ── Progress bar ── */
+  #progress-bar {
+    position: fixed; top: 0; left: 256px; right: 0; height: 3px;
+    background: #e0e0e0; z-index: 20;
+  }
+  #progress-bar-fill {
+    height: 100%; background: #0f62fe;
+    transition: width .25s ease;
+  }
+
+  /* ── Copy button on code blocks ── */
+  .pre-wrap { position: relative; margin: 10px 0; }
+  .pre-wrap pre { margin: 0; }
+  .copy-btn {
+    position: absolute; top: 8px; right: 8px;
+    background: #393939; color: #c6c6c6; border: none;
+    font-family: "IBM Plex Mono", monospace; font-size: 11px;
+    padding: 3px 10px; cursor: pointer; opacity: 0;
+    transition: opacity .15s, background .15s;
+  }
+  .pre-wrap:hover .copy-btn { opacity: 1; }
+  .copy-btn:hover { background: #525252; color: #fff; }
+  .copy-btn.copied { background: #24a148; color: #fff; }
 
   footer { text-align: center; font-size: 11px; color: #8d8d8d; margin-top: 48px; padding-top: 16px; border-top: 1px solid #e0e0e0; }
 </style>
@@ -962,10 +999,50 @@ license3.txt
   </div><!-- main -->
 </div><!-- layout -->
 
+<div id="progress-bar"><div id="progress-bar-fill"></div></div>
+
 <script>
+  // ── Scroll to top on page navigation ──
   document.querySelectorAll('.page-nav label, .contents-grid label').forEach(function(label) {
     label.addEventListener('click', function() {
       window.scrollTo(0, 0);
+    });
+  });
+
+  // ── Progress bar ──
+  var radios = document.querySelectorAll('.page-radio');
+  var fill   = document.getElementById('progress-bar-fill');
+  var steps  = { p0: 0, p1: 25, p2: 50, p3: 75, p4: 100 };
+  function updateProgress() {
+    for (var i = 0; i < radios.length; i++) {
+      if (radios[i].checked) {
+        fill.style.width = (steps[radios[i].id] || 0) + '%';
+        break;
+      }
+    }
+  }
+  radios.forEach(function(r) { r.addEventListener('change', updateProgress); });
+  updateProgress();
+
+  // ── Copy buttons on dark code blocks ──
+  document.querySelectorAll('pre:not(.light)').forEach(function(pre) {
+    var wrap = document.createElement('div');
+    wrap.className = 'pre-wrap';
+    pre.parentNode.insertBefore(wrap, pre);
+    wrap.appendChild(pre);
+    var btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    wrap.appendChild(btn);
+    btn.addEventListener('click', function() {
+      navigator.clipboard.writeText(pre.innerText).then(function() {
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(function() {
+          btn.textContent = 'Copy';
+          btn.classList.remove('copied');
+        }, 1500);
+      });
     });
   });
 </script>
