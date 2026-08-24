@@ -336,7 +336,7 @@
           <div class="spacer"></div>
           <label class="next" for="p1">Exercise 1: Package Checker &rarr;</label>
         </div>
-        <footer>Made with IBM Bob</footer>
+        <footer>Generated with IBM bob, refined by Jonah</footer>
       </div>
 
 
@@ -470,7 +470,7 @@ problems = []
           <label for="p0">&larr; Home</label>
           <label class="next" for="p2">Exercise 2: License Checker &rarr;</label>
         </div>
-        <footer>Made with IBM Bob</footer>
+        <footer>Generated with IBM bob, refined by Jonah</footer>
       </div>
 
 
@@ -621,7 +621,7 @@ Total problems: 4</pre>
           <label for="p1">&larr; Exercise 1</label>
           <label class="next" for="p3">Exercise 3: Version Sorter &rarr;</label>
         </div>
-        <footer>Made with IBM Bob</footer>
+        <footer>Generated with IBM bob, refined by Jonah</footer>
       </div>
 
 
@@ -779,7 +779,7 @@ numpy -- newest: 1.26.4</pre>
           <label for="p2">&larr; Exercise 2</label>
           <label class="next" for="p4">Exercise 4: Copyright Finder &rarr;</label>
         </div>
-        <footer>Made with IBM Bob</footer>
+        <footer>Generated with IBM bob, refined by Jonah</footer>
       </div>
 
 
@@ -954,13 +954,21 @@ license3.txt
           <label for="p3">&larr; Exercise 3</label>
           <label class="next" for="p0">Back to Home &rarr;</label>
         </div>
-        <footer>Made with IBM Bob</footer>
+        <footer>Generated with IBM bob, refined by Jonah</footer>
       </div>
 
 
     </div><!-- content-wrap -->
   </div><!-- main -->
 </div><!-- layout -->
+
+<script>
+  document.querySelectorAll('.page-nav label, .contents-grid label').forEach(function(label) {
+    label.addEventListener('click', function() {
+      window.scrollTo(0, 0);
+    });
+  });
+</script>
 
 </body>
 </html>
