@@ -2,50 +2,67 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Python Worksheet — Work Experience @ IBM Hursley</title>
+<title>Python Worksheet - Work Experience @ IBM Hursley</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   /* ── Page layout ── */
   body {
-    font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
     font-size: 14px; line-height: 1.7;
-    background: #f7f8fa; color: #1f2328;
+    background: #f4f4f4; color: #161616;
   }
 
   /* Radio inputs power everything — hidden */
   .page-radio { display: none; }
 
+  /* ── IBM Carbon colour tokens ── */
+  /* ui-01 #f4f4f4  ui-02 #ffffff  ui-03 #e0e0e0  ui-04 #8d8d8d
+     text-01 #161616  text-02 #525252  text-03 #a8a8a8
+     interactive-01 #0f62fe  interactive-02 #393939
+     support-01 #da1e28  support-02 #24a148  support-03 #f1c21b  support-04 #0043ce
+     ui-background #ffffff  inverse-01 #ffffff  inverse-02 #393939 */
+
   /* ── Sidebar ── */
   .sidebar {
     position: fixed; top: 0; left: 0;
-    width: 220px; height: 100vh;
-    background: #1f2328; color: #e5e7eb;
-    padding: 24px 0;
+    width: 256px; height: 100vh;
+    background: #161616; color: #c6c6c6;
+    padding: 0;
     overflow-y: auto;
     z-index: 10;
+    border-right: 1px solid #393939;
   }
-  .sidebar-title {
-    font-size: 11px; font-weight: 800; text-transform: uppercase;
-    letter-spacing: .08em; color: #9ca3af;
-    padding: 0 20px 12px; border-bottom: 1px solid #374151;
-    margin-bottom: 8px;
+  .sidebar-brand {
+    display: flex; align-items: center; gap: 10px;
+    padding: 16px 16px 16px 16px;
+    border-bottom: 1px solid #393939;
+    margin-bottom: 0;
   }
-  .sidebar-title span { display: block; font-size: 13px; font-weight: 800; color: #f9fafb; text-transform: none; letter-spacing: 0; margin-top: 2px; }
+  .sidebar-brand-text .brand-ibm { font-size: 11px; font-weight: 600; color: #8d8d8d; text-transform: uppercase; letter-spacing: .08em; line-height: 1; display: block; }
+  .sidebar-brand-text .brand-title { font-size: 13px; font-weight: 600; color: #f4f4f4; line-height: 1.3; display: block; margin-top: 2px; }
 
-  .nav-item label {
-    display: block; padding: 9px 20px;
-    font-size: 13px; cursor: pointer;
-    color: #d1d5db; border-left: 3px solid transparent;
-    transition: none;
+  .nav-section-label {
+    font-size: 11px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: .08em; color: #6f6f6f;
+    padding: 20px 16px 8px;
   }
-  .nav-item label:hover { background: #374151; color: #fff; }
-  .nav-item .nav-num { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; display: block; margin-bottom: 1px; }
-  .nav-item .nav-num.blue   { color: #60a5fa; }
-  .nav-item .nav-num.green  { color: #4ade80; }
-  .nav-item .nav-num.orange { color: #fb923c; }
-  .nav-item .nav-num.purple { color: #c084fc; }
-  .nav-item .nav-num.home   { color: #9ca3af; }
+  .nav-item label {
+    display: block; padding: 11px 16px;
+    font-size: 14px; font-weight: 400; cursor: pointer;
+    color: #c6c6c6; border-left: 3px solid transparent;
+    line-height: 1.4;
+  }
+  .nav-item label:hover { background: #262626; color: #f4f4f4; }
+  .nav-item .nav-num { font-size: 11px; font-weight: 500; color: #6f6f6f; display: block; margin-bottom: 2px; letter-spacing: .02em; }
+  .nav-item .nav-num.blue   { color: #78a9ff; }
+  .nav-item .nav-num.green  { color: #42be65; }
+  .nav-item .nav-num.orange { color: #ff832b; }
+  .nav-item .nav-num.purple { color: #be95ff; }
+  .nav-item .nav-num.home   { color: #6f6f6f; }
 
   /* Active sidebar item per page */
   #p0:checked ~ .layout .nav-item-0 label,
@@ -53,18 +70,19 @@
   #p2:checked ~ .layout .nav-item-2 label,
   #p3:checked ~ .layout .nav-item-3 label,
   #p4:checked ~ .layout .nav-item-4 label {
-    background: #374151; color: #fff; border-left-color: #3b82f6;
+    background: #262626; color: #f4f4f4; border-left-color: #0f62fe;
   }
 
   /* ── Main content area ── */
   .layout { display: flex; }
   .main {
-    margin-left: 220px;
-    padding: 40px 40px 60px;
+    margin-left: 256px;
+    padding: 48px 48px 80px;
     min-height: 100vh;
     width: 100%;
+    background: #f4f4f4;
   }
-  .content-wrap { max-width: 700px; margin: 0 auto; }
+  .content-wrap { max-width: 720px; margin: 0 auto; }
 
   /* ── Pages — show/hide ── */
   .pg { display: none; }
@@ -75,50 +93,56 @@
   #p4:checked ~ .layout .pg-4 { display: block; }
 
   /* ── Header ── */
-  .header { border-bottom: 2px solid #1f2328; padding-bottom: 14px; margin-bottom: 28px; }
-  .header h1 { font-size: 22px; font-weight: 800; margin-bottom: 2px; }
-  .header p  { font-size: 13px; color: #57606a; }
-  .ibm-tag { display: inline-block; background: #1f2328; color: #fff; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 3px; margin-bottom: 8px; letter-spacing: .04em; }
+  .header { border-bottom: 1px solid #e0e0e0; padding-bottom: 20px; margin-bottom: 32px; }
+  .header h1 { font-size: 28px; font-weight: 300; color: #161616; margin-bottom: 4px; letter-spacing: -.01em; }
+  .header p  { font-size: 14px; color: #525252; }
+  .ibm-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #0f62fe; color: #fff;
+    font-size: 11px; font-weight: 600; padding: 3px 10px;
+    margin-bottom: 12px; letter-spacing: .04em;
+    text-transform: uppercase;
+  }
 
   /* ── Contents grid (home page) ── */
-  .contents-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
-  .ci { border: 1px solid #e5e7eb; border-radius: 8px; padding: 14px 16px; background: #fff; cursor: pointer; }
-  .ci:hover { border-color: #d1d5db; background: #f9fafb; }
-  .ci.blue   { border-left: 4px solid #3b82f6; }
-  .ci.green  { border-left: 4px solid #22c55e; }
-  .ci.orange { border-left: 4px solid #f97316; }
-  .ci.purple { border-left: 4px solid #a855f7; }
-  .ci-num { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 3px; }
-  .ci-num.blue   { color: #1e40af; }
-  .ci-num.green  { color: #166534; }
-  .ci-num.orange { color: #9a3412; }
-  .ci-num.purple { color: #6b21a8; }
-  .ci-title { font-size: 14px; font-weight: 700; color: #1f2328; }
-  .ci-desc  { font-size: 12px; color: #57606a; margin-top: 2px; }
+  .contents-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 24px; background: #e0e0e0; border: 1px solid #e0e0e0; }
+  .ci { padding: 20px; background: #ffffff; cursor: pointer; border-left: 4px solid transparent; }
+  .ci:hover { background: #e8e8e8; }
+  .ci.blue   { border-left-color: #0f62fe; }
+  .ci.green  { border-left-color: #24a148; }
+  .ci.orange { border-left-color: #ff832b; }
+  .ci.purple { border-left-color: #8a3ffc; }
+  .ci-num { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; }
+  .ci-num.blue   { color: #0f62fe; }
+  .ci-num.green  { color: #24a148; }
+  .ci-num.orange { color: #ba4e00; }
+  .ci-num.purple { color: #6929c4; }
+  .ci-title { font-size: 16px; font-weight: 400; color: #161616; }
+  .ci-desc  { font-size: 12px; color: #525252; margin-top: 4px; }
 
   /* ── Exercise header ── */
-  .ex-header { padding: 16px 20px; border-radius: 8px; margin-bottom: 24px; }
-  .ex-header.blue   { background: #eff6ff; border: 2px solid #bfdbfe; }
-  .ex-header.green  { background: #f0fdf4; border: 2px solid #bbf7d0; }
-  .ex-header.orange { background: #fff7ed; border: 2px solid #fed7aa; }
-  .ex-header.purple { background: #fdf4ff; border: 2px solid #e9d5ff; }
-  .ex-num { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; margin-bottom: 4px; }
-  .ex-num.blue   { color: #1e40af; }
-  .ex-num.green  { color: #166534; }
-  .ex-num.orange { color: #9a3412; }
-  .ex-num.purple { color: #6b21a8; }
-  .ex-title { font-size: 20px; font-weight: 800; color: #1f2328; }
-  .ex-sub   { font-size: 13px; color: #57606a; margin-top: 2px; }
+  .ex-header { padding: 20px 24px; margin-bottom: 24px; border-left: 4px solid; }
+  .ex-header.blue   { background: #edf5ff; border-color: #0f62fe; }
+  .ex-header.green  { background: #defbe6; border-color: #24a148; }
+  .ex-header.orange { background: #fff2e8; border-color: #ff832b; }
+  .ex-header.purple { background: #f6f2ff; border-color: #8a3ffc; }
+  .ex-num { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; margin-bottom: 6px; }
+  .ex-num.blue   { color: #0f62fe; }
+  .ex-num.green  { color: #198038; }
+  .ex-num.orange { color: #ba4e00; }
+  .ex-num.purple { color: #6929c4; }
+  .ex-title { font-size: 24px; font-weight: 300; color: #161616; letter-spacing: -.01em; }
+  .ex-sub   { font-size: 14px; color: #525252; margin-top: 4px; }
 
   /* ── Sections ── */
-  .section { margin-bottom: 24px; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; }
+  .section { margin-bottom: 36px; background: #ffffff; border: 1px solid #e0e0e0; overflow: hidden; }
   .section-label {
-    font-size: 11px; font-weight: 800; text-transform: uppercase;
-    letter-spacing: .07em; color: #57606a;
-    padding: 9px 16px; background: #f7f8fa;
-    border-bottom: 1px solid #e5e7eb;
+    font-size: 11px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: .06em; color: #525252;
+    padding: 10px 16px; background: #f4f4f4;
+    border-bottom: 1px solid #e0e0e0;
   }
-  .section-body { padding: 14px 16px; }
+  .section-body { padding: 16px; }
 
   p { font-size: 14px; margin-bottom: 8px; }
   p:last-child { margin-bottom: 0; }
@@ -127,64 +151,90 @@
 
   /* ── Code ── */
   pre {
-    background: #1e1e1e; color: #d4d4d4;
-    border-radius: 7px; padding: 14px 16px;
-    font-size: 13px; line-height: 1.75;
-    overflow-x: auto; margin: 8px 0;
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    background: #161616; color: #f2f4f8;
+    padding: 16px;
+    font-size: 13px; line-height: 1.7;
+    overflow-x: auto; margin: 10px 0;
+    font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
     white-space: pre;
   }
-  pre.light { background: #f6f8fa; color: #1f2328; border: 1px solid #e5e7eb; }
-  .comment { color: #6a9955; }
-  .keyword { color: #569cd6; }
-  .string  { color: #ce9178; }
-  .func    { color: #dcdcaa; }
-  .num     { color: #b5cea8; }
-  .todo    { color: #f8f8f2; background: #3d3d00; border-radius: 3px; padding: 0 3px; font-style: italic; }
+  pre.light { background: #f4f4f4; color: #161616; border: 1px solid #e0e0e0; font-family: "IBM Plex Mono", monospace; }
+  .comment { color: #42be65; }
+  .keyword { color: #78a9ff; }
+  .string  { color: #ff832b; }
+  .func    { color: #82cfff; }
+  .num     { color: #ff832b; }
+  .todo    { color: #f2f4f8; background: #473600; padding: 0 4px; font-style: italic; }
   code {
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-    font-size: 12.5px; background: #f3f4f6; padding: 1px 5px; border-radius: 3px; color: #1f2328;
+    font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+    font-size: 12.5px; background: #e0e0e0; padding: 1px 5px; color: #161616;
   }
 
   /* ── Info boxes ── */
-  .learn-box { background: #f0f9ff; border: 1px solid #7dd3fc; border-radius: 6px; padding: 12px 16px; font-size: 13px; margin: 10px 0; }
-  .learn-box strong { color: #0369a1; display: block; margin-bottom: 4px; }
-  .learn-box a { color: #0369a1; }
+  .learn-box { background: #edf5ff; border-left: 4px solid #0f62fe; padding: 12px 16px; font-size: 13px; margin: 12px 0; }
+  .learn-box strong { color: #0043ce; display: block; margin-bottom: 4px; font-weight: 600; }
+  .learn-box a { color: #0f62fe; }
 
-  .tip-box { background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0 6px 6px 0; padding: 10px 14px; font-size: 13px; margin: 10px 0; }
-  .tip-box strong { color: #92400e; }
+  /* tip-box and try-box are now <details> elements */
+  details.tip-box,
+  details.try-box {
+    margin: 12px 0; font-size: 13px;
+    border-left: 4px solid;
+    overflow: hidden;
+  }
+  details.tip-box { background: #fcf4d6; border-left-color: #f1c21b; }
+  details.try-box { background: #defbe6; border-left-color: #24a148; }
 
-  .todo-box { background: #fefce8; border: 2px dashed #ca8a04; border-radius: 6px; padding: 12px 16px; font-size: 13px; margin: 10px 0; }
-  .todo-box .tb-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; color: #713f12; border-bottom: 1px solid #fde68a; padding-bottom: 5px; margin-bottom: 8px; }
+  details.tip-box > summary,
+  details.try-box > summary {
+    padding: 10px 16px;
+    font-weight: 600; font-size: 13px;
+    cursor: pointer;
+    list-style: none;
+    display: flex; align-items: center; gap: 8px;
+    user-select: none;
+  }
+  details.tip-box > summary::before { content: "▶"; font-size: 9px; color: #684e00; flex-shrink: 0; }
+  details.try-box > summary::before { content: "▶"; font-size: 9px; color: #198038; flex-shrink: 0; }
+  details.tip-box[open] > summary::before,
+  details.try-box[open] > summary::before { content: "▼"; }
+  details.tip-box > summary { color: #684e00; }
+  details.try-box > summary { color: #198038; }
 
-  .try-box { background: #f0fdf4; border: 1px solid #86efac; border-radius: 6px; padding: 12px 16px; font-size: 13px; margin: 10px 0; }
-  .try-box strong { color: #166534; display: block; margin-bottom: 4px; }
+  details.tip-box .box-body,
+  details.try-box .box-body {
+    padding: 0 16px 12px;
+    border-top: 1px solid;
+  }
+  details.tip-box .box-body { border-top-color: #f0d97a; }
+  details.try-box .box-body { border-top-color: #a7f0ba; }
 
-  .real-world { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 12px 16px; font-size: 13px; margin: 10px 0; }
-  .real-world strong { color: #1e40af; display: block; margin-bottom: 4px; }
+  .real-world { background: #edf5ff; border-left: 4px solid #0f62fe; padding: 12px 16px; font-size: 13px; margin: 12px 0; }
+  .real-world strong { color: #0043ce; display: block; margin-bottom: 4px; font-weight: 600; }
 
-  .challenge { border: 1px solid #e5e7eb; border-radius: 6px; overflow: hidden; margin: 10px 0; }
-  .challenge-header { background: #fdf4ff; border-bottom: 1px solid #e9d5ff; padding: 8px 14px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: #6b21a8; }
-  .challenge-body { padding: 12px 14px; font-size: 13px; }
+  .challenge { border: 1px solid #e0e0e0; overflow: hidden; margin: 24px 0 0; }
+  .challenge-header { background: #f6f2ff; border-bottom: 1px solid #d4bbff; padding: 8px 14px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: #6929c4; }
+  .challenge-body { padding: 14px 16px; font-size: 13px; background: #fff; }
   .challenge-body ol { padding-left: 18px; }
   .challenge-body li { margin-bottom: 6px; }
 
   /* ── Prev / Next navigation ── */
-  .page-nav { display: flex; justify-content: space-between; margin-top: 36px; gap: 12px; }
+  .page-nav { display: flex; justify-content: space-between; margin-top: 40px; gap: 12px; }
   .page-nav label {
-    display: inline-block; padding: 10px 20px;
-    background: #fff; border: 1px solid #e5e7eb; border-radius: 6px;
-    font-size: 13px; font-weight: 600; cursor: pointer; color: #1f2328;
+    display: inline-block; padding: 12px 24px;
+    background: #ffffff; border: 1px solid #8d8d8d;
+    font-size: 14px; font-weight: 400; cursor: pointer; color: #161616;
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
   }
-  .page-nav label:hover { background: #f7f8fa; border-color: #d1d5db; }
-  .page-nav label.next { background: #1f2328; color: #fff; border-color: #1f2328; }
-  .page-nav label.next:hover { background: #374151; }
+  .page-nav label:hover { background: #e8e8e8; }
+  .page-nav label.next { background: #0f62fe; color: #ffffff; border-color: #0f62fe; font-weight: 600; }
+  .page-nav label.next:hover { background: #0353e9; border-color: #0353e9; }
   .page-nav .spacer { flex: 1; }
 
   /* ── Run note ── */
-  .run-note { font-size: 13px; background: #f7f8fa; border: 1px solid #e5e7eb; border-radius: 6px; padding: 12px 14px; margin-bottom: 24px; }
+  .run-note { font-size: 13px; background: #ffffff; border: 1px solid #e0e0e0; border-left: 4px solid #0f62fe; padding: 12px 16px; margin-bottom: 28px; }
 
-  footer { text-align: center; font-size: 11px; color: #9ca3af; margin-top: 44px; padding-top: 14px; border-top: 1px solid #e5e7eb; }
+  footer { text-align: center; font-size: 11px; color: #8d8d8d; margin-top: 48px; padding-top: 16px; border-top: 1px solid #e0e0e0; }
 </style>
 </head>
 <body>
@@ -200,9 +250,11 @@
 
   <!-- ── Sidebar ── -->
   <nav class="sidebar">
-    <div class="sidebar-title">
-      IBM Hursley
-      <span>Python Worksheet</span>
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-text">
+        <span class="brand-ibm">SLSS Hursley</span>
+        <span class="brand-title">Python Worksheet</span>
+      </div>
     </div>
     <div class="nav-item nav-item-0">
       <label for="p0">
@@ -246,12 +298,12 @@
       <!-- ════════════════════════════════════════ -->
       <div class="pg pg-0">
         <div class="header">
-          <span class="ibm-tag">IBM Hursley — SLSS Work Experience</span>
+          <span class="ibm-tag">IBM Hursley - SLSS Work Experience</span>
           <h1>Python Worksheet</h1>
           <p>Security and Legal Scanning Services team &nbsp;·&nbsp; Four exercises, each one harder than the last</p>
         </div>
 
-        <p>Welcome. This worksheet has four Python exercises. Each one is based on a real problem the SLSS team works on. Work through them in order — each one introduces something new.</p>
+        <p>Welcome. This worksheet has four Python exercises. Each one is based on a real problem the SLSS team works on. Work through them in order - each one introduces something new.</p>
 
         <div class="run-note">
           <strong>Running your program:</strong> Press the triangle <strong>Run</strong> button in the top-right corner of VS Code. Run after every step to check it works before moving on.
@@ -261,7 +313,7 @@
           <label class="ci blue" for="p1">
             <div class="ci-num blue">Exercise 1</div>
             <div class="ci-title">Package Checker</div>
-            <div class="ci-desc">Input, if/else, lists — no files needed</div>
+            <div class="ci-desc">Input, if/else, lists - no files needed</div>
           </label>
           <label class="ci green" for="p2">
             <div class="ci-num green">Exercise 2</div>
@@ -301,8 +353,8 @@
         <div class="section">
           <div class="section-label">Background</div>
           <div class="section-body">
-            <p>At IBM we use thousands of open source software packages — things like <code>requests</code>, <code>numpy</code>, <code>flask</code>. Before a package is used, the SLSS team checks it is safe and properly licensed.</p>
-            <p>One of the first things to check is the package name itself. Attackers sometimes publish fake packages with names very close to popular ones — for example <code>colourama</code> instead of <code>colorama</code>. If a developer accidentally installs the fake one, it can run malicious code on their machine. This attack is called <strong>typosquatting</strong>.</p>
+            <p>At IBM we use thousands of open source software packages - things like <code>requests</code>, <code>numpy</code>, <code>flask</code>. Before a package is used, the SLSS team checks it is safe and properly licensed.</p>
+            <p>One of the first things to check is the package name itself. Attackers sometimes publish fake packages with names very close to popular ones - for example <code>colourama</code> instead of <code>colorama</code>. If a developer accidentally installs the fake one, it can run malicious code on their machine. This attack is called <strong>typosquatting</strong>.</p>
             <div class="learn-box">
               <strong>Learn more</strong>
               Typosquatting in software is well documented. The broader concept is described at
@@ -314,37 +366,43 @@
         </div>
 
         <div class="section">
-          <div class="section-label">Part 1 — Get input and add your own checks</div>
+          <div class="section-label">Part 1 - Get input and add your own checks</div>
           <div class="section-body">
             <p>Copy this starting code into <code>checker.py</code> and run it:</p>
-<pre><span class="comment"># IBM SLSS — Package Checker</span>
+<pre><span class="comment"># IBM SLSS - Package Checker</span>
 
 name = <span class="func">input</span>(<span class="string">"Enter a package name: "</span>)
 <span class="func">print</span>(<span class="string">"You entered:"</span>, name)</pre>
 
-            <div class="todo-box">
-              <div class="tb-label">Your turn — add these two checks below the lines above</div>
-              <ol style="padding-left:18px; margin-top:4px;">
-                <li>If the length of <code>name</code> is less than 3, print <code>"Warning: name is very short"</code></li>
-                <li>If <code>name</code> contains a space, print <code>"Warning: name contains a space"</code></li>
-              </ol>
-              <p style="margin-top:8px;"><strong>Hints:</strong> <code>len(name)</code> gives you the length. <code>" " in name</code> is <code>True</code> if there is a space.</p>
-            </div>
+            <p><strong>Your turn:</strong> add these two checks below the lines above.</p>
+            <ol style="padding-left:20px; margin-bottom:8px;">
+              <li>If the length of <code>name</code> is less than 3, print <code>"Warning: name is very short"</code></li>
+              <li>If <code>name</code> contains a space, print <code>"Warning: name contains a space"</code></li>
+            </ol>
+            <details class="tip-box">
+              <summary>Hint</summary>
+              <div class="box-body">
+                <p>To check a length, try: <code>if len(word) &lt; 5: print("short")</code></p>
+                <p>To check if something is inside a string, try: <code>if "x" in word: print("found")</code></p>
+              </div>
+            </details>
 
-            <div class="try-box">
-              <strong>Test it</strong>
-              Try <code>ab</code>, <code>my package</code>, <code>requests</code>. Does it behave correctly for all three?
-            </div>
+            <details class="try-box">
+              <summary>Test it</summary>
+              <div class="box-body">
+                Try <code>ab</code>, <code>my package</code>, <code>requests</code>. Does it behave correctly for all three?
+              </div>
+            </details>
           </div>
         </div>
 
         <div class="section">
-          <div class="section-label">Part 2 — Collect problems into a list</div>
+          <div class="section-label">Part 2 - Collect problems into a list</div>
           <div class="section-body">
             <p>Add this banned list near the top of your file, just after the first line:</p>
 <pre>banned = [<span class="string">"colourama"</span>, <span class="string">"reqeusts"</span>, <span class="string">"numpyy"</span>, <span class="string">"flaskk"</span>]</pre>
 
-            <p>Now update your program to use the structure below. Fill in the three <code>???</code> gaps — you wrote two of them already in Part 1:</p>
+            <p>Now update your program to use the structure below. Fill in the three <code>???</code> gaps - you wrote two of them already in Part 1:</p>
 <pre>name = <span class="func">input</span>(<span class="string">"Enter a package name: "</span>)
 problems = []
 
@@ -364,25 +422,46 @@ problems = []
     <span class="keyword">for</span> p <span class="keyword">in</span> problems:
         <span class="func">print</span>(<span class="string">" -"</span>, p)</pre>
 
-            <div class="try-box">
-              <strong>Test it</strong>
-              Try <code>flask</code>, <code>ab</code>, <code>my package</code>, <code>colourama</code>, <code>ab cd</code>. Which input triggers two problems at once?
-            </div>
+            <details class="tip-box">
+              <summary>Hint</summary>
+              <div class="box-body">
+                Gaps 1 and 2 are the same checks you wrote in Part 1. For gap 3, you need to check whether <code>name</code> appears anywhere in the <code>banned</code> list. You already used <code>in</code> to check if a character is inside a string - it works the same way with a list: <code>if item in my_list:</code>.
+              </div>
+            </details>
+            <details class="try-box">
+              <summary>Test it</summary>
+              <div class="box-body">
+                Try <code>flask</code>, <code>ab</code>, <code>my package</code>, <code>colourama</code>, <code>ab cd</code>. Which input triggers two problems at once?
+              </div>
+            </details>
           </div>
         </div>
 
         <div class="real-world">
           <strong>How this connects to the SLSS team's work</strong>
-          The team checks thousands of open source packages before developers are allowed to use them. Catching typosquatting fakes is one of the first checks they perform. The SLSS scanning tools flag suspicious package names automatically — your program is a simplified version of that logic.
+          The team checks thousands of open source packages before developers are allowed to use them. Catching typosquatting fakes is one of the first checks they perform. The SLSS scanning tools flag suspicious package names automatically - your program is a simplified version of that logic.
         </div>
 
         <div class="challenge">
-          <div class="challenge-header">Challenge</div>
+          <div class="challenge-header">Part 3 - Challenge</div>
           <div class="challenge-body">
             <ol>
-              <li>Add a check that warns if the name starts with a number, like <code>123abc</code>.<br>
-                  Hint: <code>name[0]</code> gives the first character. <code>name[0].isdigit()</code> returns <code>True</code> if it is a number.</li>
-              <li>Can you think of 3 more fake package names to add to the banned list? Search "Python typosquatting examples" for real cases.</li>
+              <li>
+                Add a check that warns if the name starts with a number, like <code>123abc</code>.
+                <details class="tip-box" style="margin-top:6px;">
+                  <summary>Hint</summary>
+                  <div class="box-body"><code>name[0]</code> gives the first character. <code>"3".isdigit()</code> returns <code>True</code> - use that to check whether the first character is a digit.</div>
+                </details>
+              </li>
+              <li>Test all four of your checks work together. Enter each of these and make sure the right problem is flagged:
+                <ul style="margin-top:6px;">
+                  <li><code>urlib3</code> - a known typosquatting fake (missing a letter from <code>urllib3</code>). Add it to your banned list first.</li>
+                  <li><code>my package</code></li>
+                  <li><code>ab</code> </li>
+                  <li><code>1flask</code></li>
+                </ul>
+              </li>
+              <li>Search "Python typosquatting PyPI" and find 3 more real examples. Add them to your banned list and test each one.</li>
             </ol>
           </div>
         </div>
@@ -408,11 +487,11 @@ problems = []
         <div class="section">
           <div class="section-label">Background</div>
           <div class="section-body">
-            <p>Every open source software package has a <strong>license</strong> — a legal document that says how you are allowed to use it. Some licenses are very permissive (like MIT), some have conditions attached (like GPL), and some are not allowed at IBM at all.</p>
-            <p>The tools that scan packages sometimes return incomplete licenses — just <code>"GPL"</code> instead of <code>"GPL-2.0-only"</code>, or a completely blank license. This is a real problem: an analyst might assume the license has been checked when it hasn't.</p>
+            <p>Every open source software package has a <strong>license</strong> - a legal document that says how you are allowed to use it. Some licenses are very permissive (like MIT), some have conditions attached (like GPL), and some are not allowed at IBM at all.</p>
+            <p>The tools that scan packages sometimes return incomplete licenses - just <code>"GPL"</code> instead of <code>"GPL-2.0-only"</code>, or a completely blank license. This is a real problem: an analyst might assume the license has been checked when it hasn't.</p>
             <div class="learn-box">
-              <strong>Learn more — SPDX license identifiers</strong>
-              SPDX (Software Package Data Exchange) is the standard IBM uses to identify licenses. Every valid license has a unique identifier like <code>Apache-2.0</code>, <code>MIT</code>, or <code>GPL-3.0-only</code>. Just writing <code>"GPL"</code> or <code>"BSD"</code> is not enough — the version matters.
+              <strong>Learn more - SPDX license identifiers</strong>
+              SPDX (Software Package Data Exchange) is the standard IBM uses to identify licenses. Every valid license has a unique identifier like <code>Apache-2.0</code>, <code>MIT</code>, or <code>GPL-3.0-only</code>. Just writing <code>"GPL"</code> or <code>"BSD"</code> is not enough - the version matters.
               Full list: <a href="https://spdx.org/licenses/">spdx.org/licenses</a>
             </div>
             <p>Create a new file called <code>license_checker.py</code> and a data file called <code>packages.txt</code> in the same folder.</p>
@@ -420,7 +499,7 @@ problems = []
         </div>
 
         <div class="section">
-          <div class="section-label">Data file — packages.txt</div>
+          <div class="section-label">Data file: packages.txt</div>
           <div class="section-body">
 <pre class="light">requests,Apache-2.0
 flask,BSD-3-Clause
@@ -435,7 +514,7 @@ colorama,BSD</pre>
         </div>
 
         <div class="section">
-          <div class="section-label">Part 1 — Read and split the file</div>
+          <div class="section-label">Part 1 - Read and split the file</div>
           <div class="section-body">
             <p>This code reads the file and splits each line at the comma. Copy it in and run it:</p>
 <pre><span class="keyword">with</span> <span class="func">open</span>(<span class="string">"packages.txt"</span>) <span class="keyword">as</span> f:
@@ -444,17 +523,28 @@ colorama,BSD</pre>
         name    = parts[<span class="num">0</span>]
         license = parts[<span class="num">1</span>]
         <span class="func">print</span>(name, <span class="string">"--&gt;"</span>, license)</pre>
-            <div class="tip-box">
-              <strong>Tip:</strong> <code>.strip()</code> removes invisible newline characters from the end of each line. <code>.split(",")</code> cuts the line at the comma — <code>parts[0]</code> is the name, <code>parts[1]</code> is the license.
-            </div>
+            <details class="tip-box">
+              <summary>Hint</summary>
+              <div class="box-body">
+                <code>.strip()</code> removes invisible newline characters from the end of each line. <code>.split(",")</code> cuts the line at the comma - <code>parts[0]</code> is the name, <code>parts[1]</code> is the license.
+              </div>
+            </details>
+            <p style="margin-top:12px;"><strong>Your turn:</strong> add a total count. Add a counter variable before the loop (set it to <code>0</code>), add <code>1</code> to it each iteration, and print this after the loop:</p>
+            <pre class="light" style="margin:6px 0 12px;">Total packages read: 9</pre>
+            <details class="tip-box">
+              <summary>Hint</summary>
+              <div class="box-body">
+                You do the same thing with <code>problems_found</code> in Part 2 - use the same pattern here but increment on every line, not just problem ones.
+              </div>
+            </details>
           </div>
         </div>
 
         <div class="section">
-          <div class="section-label">Part 2 — Flag the problems</div>
+          <div class="section-label">Part 2 - Flag the problems</div>
           <div class="section-body">
             <p>The structure below handles all three cases. Fill in the two <code>???</code> gaps:</p>
-<pre><span class="comment"># IBM SLSS — License Checker</span>
+<pre><span class="comment"># IBM SLSS - License Checker</span>
 
 incomplete = [<span class="string">"GPL"</span>, <span class="string">"LGPL"</span>, <span class="string">"BSD"</span>, <span class="string">"Apache"</span>, <span class="string">"MPL"</span>, <span class="string">"AGPL"</span>]
 problems_found = <span class="num">0</span>
@@ -478,13 +568,16 @@ problems_found = <span class="num">0</span>
 
 <span class="func">print</span>()
 <span class="func">print</span>(<span class="string">"Total problems:"</span>, problems_found)</pre>
-            <div class="tip-box">
-              <strong>Hints:</strong><br>
-              Blank string: <code>license == ""</code><br>
-              In a list: <code>license in incomplete</code>
-            </div>
-            <div class="try-box">
-              <strong>Expected output</strong>
+            <details class="tip-box">
+              <summary>Hint</summary>
+              <div class="box-body">
+                <p>To check if a string is empty: think about what an empty string looks like as a value, and use <code>==</code> to compare.</p>
+                <p>To check if a value appears in a list: Python has a keyword that reads almost like plain English - <code>if colour in colours:</code> checks whether <code>colour</code> is anywhere in the list <code>colours</code>.</p>
+              </div>
+            </details>
+            <details class="try-box">
+              <summary>Expected output</summary>
+              <div class="box-body">
 <pre class="light" style="margin-top:6px;">requests --&gt; OK: Apache-2.0
 flask --&gt; OK: BSD-3-Clause
 numpy --&gt; MISSING license
@@ -495,24 +588,30 @@ scipy --&gt; OK: BSD-3-Clause
 pytest --&gt; OK: MIT
 colorama --&gt; INCOMPLETE: BSD
 
-Total problems: 3</pre>
-            </div>
+Total problems: 4</pre>
+              </div>
+            </details>
           </div>
         </div>
 
         <div class="real-world">
           <strong>How this connects to the SLSS team's work</strong>
-          The SLSS team's Bulk Clearance Tool scans thousands of packages and extracts their license. A known bug — one of the most tracked issues in the team's backlog — is that incomplete license identifiers like <code>"GPL"</code> or <code>"BSD"</code> are passed through without a warning. The code you have just written is the core of the fix.
+          The SLSS team's Bulk Clearance Tool scans thousands of packages and extracts their license. A known bug - one of the most tracked issues in the team's backlog - is that incomplete license identifiers like <code>"GPL"</code> or <code>"BSD"</code> are passed through without a warning. The code you have just written is the core of the fix.
         </div>
 
         <div class="challenge">
-          <div class="challenge-header">Challenge</div>
+          <div class="challenge-header">Part 3 - Challenge</div>
           <div class="challenge-body">
             <ol>
-              <li>Add 3 more packages to <code>packages.txt</code> — one blank, one incomplete, one fine. Does your program catch them all?</li>
-              <li>At the end, print a summary of just the names that need attention:<br>
-                  <code>Packages needing attention: numpy, django, pandas, colorama</code><br>
-                  Hint: create an empty list before the loop, <code>.append(name)</code> when you find a problem, then use <code>", ".join(my_list)</code> to print it.</li>
+              <li>Add 3 more packages to <code>packages.txt</code> - one blank, one incomplete, one fine. Does your program catch them all?</li>
+              <li>
+                At the end, print a summary of just the names that need attention:
+                <pre class="light" style="margin:6px 0;">Packages needing attention: numpy, django, pandas, colorama</pre>
+                <details class="tip-box" style="margin-top:4px;">
+                  <summary>Hint</summary>
+                  <div class="box-body">Create an empty list before the loop. Inside the loop, when you find a problem, add the name to the list. After the loop, look up how <code>", ".join()</code> works - it turns a list into a single string.</div>
+                </details>
+              </li>
               <li>Look up <code>MIT</code> and <code>Apache-2.0</code> on <a href="https://spdx.org/licenses/">spdx.org/licenses</a>. What is the difference? Which one has more conditions?</li>
             </ol>
           </div>
@@ -531,7 +630,7 @@ Total problems: 3</pre>
       <!-- ════════════════════════════════════════ -->
       <div class="pg pg-3">
         <div class="ex-header orange">
-          <div class="ex-num orange">Exercise 3 — introduces functions</div>
+          <div class="ex-num orange">Exercise 3 - introduces functions</div>
           <div class="ex-title">Version Sorter</div>
           <div class="ex-sub">Sort a list of software versions into the correct order</div>
         </div>
@@ -540,9 +639,9 @@ Total problems: 3</pre>
           <div class="section-label">Background</div>
           <div class="section-body">
             <p>Software packages use <strong>version numbers</strong> like <code>1.0.0</code>, <code>2.3.1</code>, or <code>1.10.0</code>. The format is usually <em>major.minor.patch</em>. The team needs to know the newest version of a package to make sure they are not using something out of date.</p>
-            <p>There is a catch with Python: if you sort version numbers as text, <code>"1.10.0"</code> can appear in the wrong position — because Python compares letter by letter. You are going to write a function to fix this.</p>
+            <p>There is a catch with Python: if you sort version numbers as text, <code>"1.10.0"</code> can appear in the wrong position - because Python compares letter by letter. You are going to write a function to fix this.</p>
             <div class="learn-box">
-              <strong>Learn more — semantic versioning</strong>
+              <strong>Learn more - semantic versioning</strong>
               Most open source packages follow a standard called Semantic Versioning (SemVer). The format is <code>MAJOR.MINOR.PATCH</code>. A new major version (e.g. <code>2.0.0</code>) usually means breaking changes. A new patch (e.g. <code>1.0.1</code>) usually means a small bug fix.
               Read more: <a href="https://semver.org">semver.org</a>
             </div>
@@ -551,51 +650,64 @@ Total problems: 3</pre>
         </div>
 
         <div class="section">
-          <div class="section-label">Part 1 — See the problem</div>
+          <div class="section-label">Part 1 - See the problem</div>
           <div class="section-body">
-            <p>Copy this in and run it. Look carefully at the output — is the order what you would expect?</p>
+            <p>Copy this in and run it. Look carefully at the output - is the order what you would expect?</p>
 <pre>versions = [<span class="string">"1.9.0"</span>, <span class="string">"1.10.0"</span>, <span class="string">"2.0.0"</span>, <span class="string">"1.2.3"</span>, <span class="string">"1.10.1"</span>]
 versions.<span class="func">sort</span>()
 <span class="func">print</span>(versions)</pre>
-            <p>Look at where <code>1.10.0</code> ends up compared to <code>1.9.0</code>. Is that the right order? Think about it before reading on.</p>
+            <p><strong>Your turn:</strong> look carefully at where <code>1.10.0</code> appears in the output. Answer these before moving on:</p>
+            <ol style="padding-left:20px; margin-bottom:8px;">
+              <li>What position does <code>1.10.0</code> appear at? Is that correct?</li>
+              <li>Python compares strings letter by letter. Why does <code>"1.1"</code> sort before <code>"1.9"</code> when treated as text?</li>
+            </ol>
           </div>
         </div>
 
         <div class="section">
-          <div class="section-label">Part 2 — Write a function to fix the sorting</div>
+          <div class="section-label">Part 2 - Write a function to fix the sorting</div>
           <div class="section-body">
-            <p>The fix is to split the version string on <code>"."</code> and compare the numbers as integers, not as text. Fill in the missing line:</p>
+            <p>The fix is to split the version string on <code>"."</code> and compare the numbers as integers, not as text. This function has two lines for you to fill in:</p>
 <pre><span class="keyword">def</span> <span class="func">version_key</span>(v):
-    <span class="comment"># Split "1.10.3" into ["1", "10", "3"]</span>
-    <span class="comment"># then convert each part to an integer</span>
-    parts = <span class="todo">???</span>           <span class="comment"># hint: v.split(".")</span>
-    <span class="keyword">return</span> [<span class="func">int</span>(p) <span class="keyword">for</span> p <span class="keyword">in</span> parts]</pre>
-            <div class="tip-box">
-              <strong>What does this function do?</strong>
-              It turns a version string like <code>"1.10.3"</code> into a list of integers <code>[1, 10, 3]</code>. Python compares lists of integers correctly — so <code>[1, 10, 3]</code> is correctly seen as larger than <code>[1, 9, 0]</code>.
-            </div>
+    parts = <span class="todo">???</span>           <span class="comment"># split v on "." to get a list of strings</span>
+    <span class="keyword">return</span> <span class="todo">???</span>           <span class="comment"># convert each part to int and return the list</span></pre>
+            <details class="tip-box">
+              <summary>Hint</summary>
+              <div class="box-body">
+                <p>Line 1: strings have a method that splits them on a character - e.g. <code>"a,b,c".split(",")</code> gives <code>["a", "b", "c"]</code>. Use the same idea but split on <code>"."</code>.</p>
+                <p>Line 2: you need to convert each string in <code>parts</code> to an integer. You have already used <code>int()</code> to convert a single value - think about how to apply it to every item in a list using a <code>for</code> loop.</p>
+              </div>
+            </details>
           </div>
         </div>
 
         <div class="section">
-          <div class="section-label">Part 3 — Use your function</div>
+          <div class="section-label">Part 3 - Use your function</div>
           <div class="section-body">
-            <p>Pass your function to <code>sort()</code> using the <code>key=</code> argument. Add this below your function:</p>
+            <p>The list of versions and the sort call are given. Add the two <code>print</code> lines yourself - one to print the full sorted list, one to print just the newest (the last item):</p>
 <pre>versions = [<span class="string">"1.9.0"</span>, <span class="string">"1.10.0"</span>, <span class="string">"2.0.0"</span>, <span class="string">"1.2.3"</span>, <span class="string">"1.10.1"</span>]
 versions.<span class="func">sort</span>(key=version_key)
-<span class="func">print</span>(versions)
-<span class="func">print</span>(<span class="string">"Newest:"</span>, versions[<span class="num">-1</span>])</pre>
-            <div class="try-box">
-              <strong>Expected output</strong>
+<span class="todo">???</span>   <span class="comment"># print the sorted list</span>
+<span class="todo">???</span>   <span class="comment"># print "Newest:" followed by the last item in the list</span></pre>
+            <details class="tip-box">
+              <summary>Hint</summary>
+              <div class="box-body">
+                <code>versions[-1]</code> gives the last item in a list. You used <code>print()</code> with two arguments back in Exercise 1 - e.g. <code>print("Problems found:", problems)</code>.
+              </div>
+            </details>
+            <details class="try-box">
+              <summary>Expected output</summary>
+              <div class="box-body">
 <pre class="light" style="margin-top:6px;">['1.2.3', '1.9.0', '1.10.0', '1.10.1', '2.0.0']
 Newest: 2.0.0</pre>
-              Is <code>1.10.0</code> now correctly placed after <code>1.9.0</code>?
-            </div>
+                Is <code>1.10.0</code> now correctly placed after <code>1.9.0</code>?
+              </div>
+            </details>
           </div>
         </div>
 
         <div class="section">
-          <div class="section-label">Part 4 — Read versions from a file</div>
+          <div class="section-label">Part 4 - Read versions from a file</div>
           <div class="section-body">
             <p>Create a file called <code>versions.txt</code>:</p>
 <pre class="light">requests,2.28.0
@@ -609,7 +721,7 @@ numpy,1.26.4
 numpy,1.9.0
 numpy,1.10.0</pre>
             <p>Now write a program that reads this file and prints the newest version for each package. Two gaps to fill:</p>
-<pre><span class="comment"># IBM SLSS — Version Sorter</span>
+<pre><span class="comment"># IBM SLSS - Version Sorter</span>
 
 <span class="keyword">def</span> <span class="func">version_key</span>(v):
     parts = <span class="todo">???</span>
@@ -631,26 +743,33 @@ package_versions = {}  <span class="comment"># { "requests": ["2.28.0", "2.31.0"
     all_versions.<span class="func">sort</span>(key=<span class="todo">???</span>)
     newest = all_versions[<span class="num">-1</span>]
     <span class="func">print</span>(name, <span class="string">"-- newest:"</span>, newest)</pre>
-            <div class="try-box">
-              <strong>Expected output</strong>
+            <details class="try-box">
+              <summary>Expected output</summary>
+              <div class="box-body">
 <pre class="light" style="margin-top:6px;">requests -- newest: 2.31.0
 flask -- newest: 3.0.0
 numpy -- newest: 1.26.4</pre>
-            </div>
+              </div>
+            </details>
           </div>
         </div>
 
         <div class="real-world">
           <strong>How this connects to the SLSS team's work</strong>
-          Version numbers appear throughout the team's scanning tools. There are open bugs where versions are being compared or sorted incorrectly — causing the wrong version to be reported as the latest. The <code>version_key</code> function you wrote is the standard fix for this class of problem.
+          Version numbers appear throughout the team's scanning tools. There are open bugs where versions are being compared or sorted incorrectly - causing the wrong version to be reported as the latest. The <code>version_key</code> function you wrote is the standard fix for this class of problem.
         </div>
 
         <div class="challenge">
-          <div class="challenge-header">Challenge</div>
+          <div class="challenge-header">Part 5 - Challenge</div>
           <div class="challenge-body">
             <ol>
-              <li>Add a check: if the newest version starts with <code>0</code> (e.g. <code>0.9.1</code>), print <code>"Note: still pre-release"</code>.<br>
-                  Hint: check <code>version_key(newest)[0] == 0</code>.</li>
+              <li>
+                Add a check: if the newest version starts with <code>0</code> (e.g. <code>0.9.1</code>), print <code>"Note: still pre-release"</code>.
+                <details class="tip-box" style="margin-top:6px;">
+                  <summary>Hint</summary>
+                  <div class="box-body">You already have a function that turns a version string into a list of integers. Call it on <code>newest</code> and check the value at index <code>[0]</code>.</div>
+                </details>
+              </li>
               <li>Add 3 more packages to <code>versions.txt</code>. Make sure at least one has a version like <code>1.10.x</code> that would sort wrongly without your function.</li>
             </ol>
           </div>
@@ -669,7 +788,7 @@ numpy -- newest: 1.26.4</pre>
       <!-- ════════════════════════════════════════ -->
       <div class="pg pg-4">
         <div class="ex-header purple">
-          <div class="ex-num purple">Exercise 4 — introduces writing files</div>
+          <div class="ex-num purple">Exercise 4 - introduces writing files</div>
           <div class="ex-title">Copyright Finder</div>
           <div class="ex-sub">Search license files for copyright lines and save them to a report</div>
         </div>
@@ -677,11 +796,11 @@ numpy -- newest: 1.26.4</pre>
         <div class="section">
           <div class="section-label">Background</div>
           <div class="section-body">
-            <p>Inside every open source license file there are <strong>copyright lines</strong> — statements like <code>Copyright (c) 2023 Jane Smith</code>. The SLSS team must collect these for legal records whenever they clear a package for use.</p>
+            <p>Inside every open source license file there are <strong>copyright lines</strong> - statements like <code>Copyright (c) 2023 Jane Smith</code>. The SLSS team must collect these for legal records whenever they clear a package for use.</p>
             <p>There is a known bug in the team's Bulk Clearance Tool: it only picks up the <em>first</em> copyright line it finds in a license file. Some packages have two or three copyright holders, and the rest are being silently dropped. This is one of the most discussed bugs in the team's issue tracker.</p>
             <div class="learn-box">
-              <strong>Learn more — why copyright matters in open source</strong>
-              When you use open source software, you are legally required to credit the original authors in certain situations — especially when distributing software. This credit comes from the copyright lines in the license file. Dropping any of them is a legal compliance risk.
+              <strong>Learn more - why copyright matters in open source</strong>
+              When you use open source software, you are legally required to credit the original authors in certain situations - especially when distributing software. This credit comes from the copyright lines in the license file. Dropping any of them is a legal compliance risk.
               Background reading: <a href="https://opensource.org/licenses">opensource.org/licenses</a>
             </div>
             <p>Create a new file called <code>copyright_finder.py</code>.</p>
@@ -689,9 +808,9 @@ numpy -- newest: 1.26.4</pre>
         </div>
 
         <div class="section">
-          <div class="section-label">Part 1 — Find all copyright lines in one file</div>
+          <div class="section-label">Part 1 - Find all copyright lines in one file</div>
           <div class="section-body">
-            <p>Create a file called <code>license1.txt</code> — a real-world example with two copyright holders:</p>
+            <p>Create a file called <code>license1.txt</code> - a real-world example with two copyright holders:</p>
 <pre class="light">Apache License, Version 2.0
 
 Original Work
@@ -703,7 +822,7 @@ Copyright (c) 2018 Dale Hui
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.</pre>
 
-            <p>Write a function that reads a file and returns a list of every line containing the word "Copyright". Fill in the one gap:</p>
+            <p>Write a function that reads a file and returns a list of every line containing the word "Copyright". There are two gaps to fill - the <code>if</code> check, and the code to print the results after calling the function:</p>
 <pre><span class="keyword">def</span> <span class="func">find_copyright_lines</span>(filename):
     found = []
     <span class="keyword">with</span> <span class="func">open</span>(filename) <span class="keyword">as</span> f:
@@ -714,21 +833,28 @@ you may not use this file except in compliance with the License.</pre>
 
 
 results = <span class="func">find_copyright_lines</span>(<span class="string">"license1.txt"</span>)
-<span class="func">print</span>(<span class="string">"Lines found:"</span>, <span class="func">len</span>(results))
-<span class="keyword">for</span> line <span class="keyword">in</span> results:
-    <span class="func">print</span>(<span class="string">" -"</span>, line)</pre>
-
-            <div class="try-box">
-              <strong>Expected output</strong>
+<span class="todo">???</span>   <span class="comment"># print how many lines were found, using len(results)</span>
+<span class="todo">???</span>   <span class="comment"># loop over results and print each line with " - " in front</span></pre>
+            <details class="tip-box">
+              <summary>Hint</summary>
+              <div class="box-body">
+                <p>Gap 1: you need to check whether a word appears somewhere inside a string. You did the same kind of check in Exercise 1 - look back at how you tested whether a name contained a space.</p>
+                <p>Gap 2: you need two lines - one to print a count (look back at how you printed <code>problems_found</code> in Exercise 2), and one to loop and print each item (look back at how you printed each problem in Exercise 1).</p>
+              </div>
+            </details>
+            <details class="try-box">
+              <summary>Expected output</summary>
+              <div class="box-body">
 <pre class="light" style="margin-top:6px;">Lines found: 2
  - Copyright (c) 2016 Matthias Kadenbach
  - Copyright (c) 2018 Dale Hui</pre>
-            </div>
+              </div>
+            </details>
           </div>
         </div>
 
         <div class="section">
-          <div class="section-label">Part 2 — Handle multiple files</div>
+          <div class="section-label">Part 2 - Handle multiple files</div>
           <div class="section-body">
             <p>Create two more license files.</p>
             <p><strong>license2.txt</strong></p>
@@ -742,43 +868,52 @@ Permission is hereby granted, free of charge...</pre>
 # Copyright (c) 2014, ActiveState Software
 # All rights reserved.</pre>
 
-            <p style="margin-top:10px;">The list of files is given. Write the loop body yourself — call your function and print the results for each file:</p>
+            <p style="margin-top:10px;">The list of files is given. Write the loop body yourself - call your function and print the results for each file:</p>
 <pre>license_files = [<span class="string">"license1.txt"</span>, <span class="string">"license2.txt"</span>, <span class="string">"license3.txt"</span>]
 
 <span class="keyword">for</span> filename <span class="keyword">in</span> license_files:
     <span class="todo">???</span>   <span class="comment"># call find_copyright_lines and print the results</span></pre>
 
-            <div class="tip-box">
-              <strong>Tip:</strong> You already wrote <code>find_copyright_lines</code> — call it with <code>filename</code> and loop over the returned list to print each line.
-            </div>
+            <details class="tip-box">
+              <summary>Hint</summary>
+              <div class="box-body">
+                You already wrote <code>find_copyright_lines</code> - call it with <code>filename</code> and loop over the returned list to print each line.
+              </div>
+            </details>
           </div>
         </div>
 
         <div class="section">
-          <div class="section-label">Part 3 — Save results to a file</div>
+          <div class="section-label">Part 3 - Save results to a file</div>
           <div class="section-body">
-            <p>Instead of just printing, write all results to a report file called <code>report.txt</code>. The file-writing structure is given — fill in what to write on each copyright line:</p>
+            <p>Instead of just printing, write all results to a report file. The outer structure is given - fill in the three gaps inside the loop:</p>
 <pre>license_files = [<span class="string">"license1.txt"</span>, <span class="string">"license2.txt"</span>, <span class="string">"license3.txt"</span>]
 
 <span class="keyword">with</span> <span class="func">open</span>(<span class="string">"report.txt"</span>, <span class="string">"w"</span>) <span class="keyword">as</span> report:
     <span class="keyword">for</span> filename <span class="keyword">in</span> license_files:
         lines = <span class="func">find_copyright_lines</span>(filename)
         report.<span class="func">write</span>(filename + <span class="string">"\n"</span>)
-        <span class="keyword">if</span> <span class="func">len</span>(lines) == <span class="num">0</span>:
-            report.<span class="func">write</span>(<span class="string">"  No copyright lines found\n"</span>)
+        <span class="keyword">if</span> <span class="todo">???</span>:                            <span class="comment"># no copyright lines found</span>
+            report.<span class="func">write</span>(<span class="todo">???</span>)              <span class="comment"># write "  No copyright lines found\n"</span>
         <span class="keyword">else</span>:
             <span class="keyword">for</span> line <span class="keyword">in</span> lines:
-                report.<span class="func">write</span>(<span class="todo">???</span>)   <span class="comment"># write each line to the file</span>
+                report.<span class="func">write</span>(<span class="todo">???</span>)        <span class="comment"># write each line, indented with "  "</span>
         report.<span class="func">write</span>(<span class="string">"\n"</span>)
 
 <span class="func">print</span>(<span class="string">"Report saved to report.txt"</span>)</pre>
 
-            <div class="tip-box">
-              <strong>Tip:</strong> <code>report.write(some_text)</code> writes text to the file. Add <code>"\n"</code> at the end of each line, otherwise everything runs together. Add <code>"  "</code> (two spaces) at the start to indent it neatly.
-            </div>
+            <details class="tip-box">
+              <summary>Hints</summary>
+              <div class="box-body">
+                <p>Gap 1: you want to check how many items are in <code>lines</code>. You have used <code>len()</code> before - use it here with a comparison.</p>
+                <p>Gap 2: this is a plain string - think about what characters you need at the end of a line when writing to a file so that the next thing starts on a new line.</p>
+                <p>Gap 3: you need to write each line indented by two spaces. Strings can be joined with <code>+</code> - think about what three parts make up each line you want to write.</p>
+              </div>
+            </details>
 
-            <div class="try-box">
-              <strong>Open <code>report.txt</code> — it should look like this:</strong>
+            <details class="try-box">
+              <summary>Open report.txt - it should look like this</summary>
+              <div class="box-body">
 <pre class="light" style="margin-top:6px;">license1.txt
   Copyright (c) 2016 Matthias Kadenbach
   Copyright (c) 2018 Dale Hui
@@ -789,22 +924,28 @@ license2.txt
 license3.txt
   # Copyright (c) 2015, Hewlett Packard Enterprise
   # Copyright (c) 2014, ActiveState Software</pre>
-            </div>
+              </div>
+            </details>
           </div>
         </div>
 
         <div class="real-world">
           <strong>How this connects to the SLSS team's work</strong>
-          The function you wrote — finding every copyright line rather than just the first — is the exact fix needed for one of the most commented-on bugs in the team's backlog. The current tool misses copyright lines from packages where two or more people own the copyright. A developer on the team can take your logic directly and apply it to the real tool.
+          The function you wrote - finding every copyright line rather than just the first - is the exact fix needed for one of the most commented-on bugs in the team's backlog. The current tool misses copyright lines from packages where two or more people own the copyright. A developer on the team can take your logic directly and apply it to the real tool.
         </div>
 
         <div class="challenge">
-          <div class="challenge-header">Challenge</div>
+          <div class="challenge-header">Part 4 - Challenge</div>
           <div class="challenge-body">
             <ol>
-              <li>Notice that <code>license3.txt</code> has lines starting with <code>#</code> — comment characters that should be stripped. Update <code>find_copyright_lines</code> to remove those characters.<br>
-                  Hint: <code>line.strip().lstrip("# ")</code> removes leading <code>#</code> and space characters.</li>
-              <li>The Apache 2.0 license text itself contains <code>"Copyright [yyyy] [name of copyright owner]"</code> as a template — not a real copyright. How could you detect and skip that line? Try adding a check.</li>
+              <li>
+                Notice that <code>license3.txt</code> has lines starting with <code>#</code> - comment characters that should be stripped. Update <code>find_copyright_lines</code> to remove those characters.
+                <details class="tip-box" style="margin-top:6px;">
+                  <summary>Hint</summary>
+                  <div class="box-body">After you append a line to <code>found</code>, you need to clean it. <code>strip()</code> removes whitespace from both ends. Look up <code>lstrip()</code> - it does the same but only from the left, and accepts a string of characters to remove.</div>
+                </details>
+              </li>
+              <li>The Apache 2.0 license text itself contains <code>"Copyright [yyyy] [name of copyright owner]"</code> as a template - not a real copyright. How could you detect and skip that line? Try adding a check.</li>
             </ol>
           </div>
         </div>
