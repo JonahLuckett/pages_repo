@@ -59,18 +59,22 @@
   }
   .nav-item label:hover { background: #262626; color: #f4f4f4; }
   .nav-item .nav-num { font-size: 11px; font-weight: 500; color: #6f6f6f; display: block; margin-bottom: 2px; letter-spacing: .02em; }
-  .nav-item .nav-num.blue   { color: #78a9ff; }
-  .nav-item .nav-num.green  { color: #42be65; }
-  .nav-item .nav-num.orange { color: #ff832b; }
-  .nav-item .nav-num.purple { color: #be95ff; }
-  .nav-item .nav-num.home   { color: #6f6f6f; }
+  .nav-item .nav-num.c1 { color: #78a9ff; }
+  .nav-item .nav-num.c2 { color: #3ddbd9; }
+  .nav-item .nav-num.c3 { color: #42be65; }
+  .nav-item .nav-num.c4 { color: #f1c21b; }
+  .nav-item .nav-num.c5 { color: #ee5396; }
+  .nav-item .nav-num.c6 { color: #ff8389; }
+  .nav-item .nav-num.home { color: #6f6f6f; }
 
   /* Active sidebar item per page */
   #p0:checked ~ .layout .nav-item-0 label,
   #p1:checked ~ .layout .nav-item-1 label,
   #p2:checked ~ .layout .nav-item-2 label,
   #p3:checked ~ .layout .nav-item-3 label,
-  #p4:checked ~ .layout .nav-item-4 label {
+  #p4:checked ~ .layout .nav-item-4 label,
+  #p5:checked ~ .layout .nav-item-5 label,
+  #p6:checked ~ .layout .nav-item-6 label {
     background: #262626; color: #f4f4f4; border-left-color: #0f62fe;
   }
 
@@ -92,6 +96,8 @@
   #p2:checked ~ .layout .pg-2 { display: block; animation: pgIn .18s ease; }
   #p3:checked ~ .layout .pg-3 { display: block; animation: pgIn .18s ease; }
   #p4:checked ~ .layout .pg-4 { display: block; animation: pgIn .18s ease; }
+  #p5:checked ~ .layout .pg-5 { display: block; animation: pgIn .18s ease; }
+  #p6:checked ~ .layout .pg-6 { display: block; animation: pgIn .18s ease; }
   @keyframes pgIn {
     from { opacity: 0; transform: translateY(6px); }
     to   { opacity: 1; transform: translateY(0);   }
@@ -113,29 +119,37 @@
   .contents-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 24px; background: #e0e0e0; border: 1px solid #e0e0e0; }
   .ci { padding: 20px; background: #ffffff; cursor: pointer; border-left: 4px solid transparent; transition: background .12s, box-shadow .12s, transform .12s; }
   .ci:hover { background: #f0f0f0; box-shadow: 0 2px 8px rgba(0,0,0,.08); transform: translateY(-1px); }
-  .ci.blue   { border-left-color: #0f62fe; }
-  .ci.green  { border-left-color: #24a148; }
-  .ci.orange { border-left-color: #ff832b; }
-  .ci.purple { border-left-color: #8a3ffc; }
+  .ci.c1 { border-left-color: #0f62fe; }
+  .ci.c2 { border-left-color: #007d79; }
+  .ci.c3 { border-left-color: #198038; }
+  .ci.c4 { border-left-color: #b28600; }
+  .ci.c5 { border-left-color: #9f1853; }
+  .ci.c6 { border-left-color: #da1e28; }
   .ci-num { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; }
-  .ci-num.blue   { color: #0f62fe; }
-  .ci-num.green  { color: #24a148; }
-  .ci-num.orange { color: #ba4e00; }
-  .ci-num.purple { color: #6929c4; }
+  .ci-num.c1 { color: #0f62fe; }
+  .ci-num.c2 { color: #007d79; }
+  .ci-num.c3 { color: #198038; }
+  .ci-num.c4 { color: #b28600; }
+  .ci-num.c5 { color: #9f1853; }
+  .ci-num.c6 { color: #da1e28; }
   .ci-title { font-size: 16px; font-weight: 400; color: #161616; }
   .ci-desc  { font-size: 12px; color: #525252; margin-top: 4px; }
 
   /* ── Exercise header ── */
   .ex-header { padding: 20px 24px; margin-bottom: 24px; border-left: 4px solid; }
-  .ex-header.blue   { background: #edf5ff; border-color: #0f62fe; }
-  .ex-header.green  { background: #defbe6; border-color: #24a148; }
-  .ex-header.orange { background: #fff2e8; border-color: #ff832b; }
-  .ex-header.purple { background: #f6f2ff; border-color: #8a3ffc; }
+  .ex-header.c1 { background: #edf5ff; border-color: #0f62fe; }
+  .ex-header.c2 { background: #d9fbfb; border-color: #007d79; }
+  .ex-header.c3 { background: #defbe6; border-color: #198038; }
+  .ex-header.c4 { background: #fdf6dd; border-color: #b28600; }
+  .ex-header.c5 { background: #fff0f6; border-color: #9f1853; }
+  .ex-header.c6 { background: #fff1f1; border-color: #da1e28; }
   .ex-num { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; margin-bottom: 6px; }
-  .ex-num.blue   { color: #0f62fe; }
-  .ex-num.green  { color: #198038; }
-  .ex-num.orange { color: #ba4e00; }
-  .ex-num.purple { color: #6929c4; }
+  .ex-num.c1 { color: #0f62fe; }
+  .ex-num.c2 { color: #007d79; }
+  .ex-num.c3 { color: #198038; }
+  .ex-num.c4 { color: #b28600; }
+  .ex-num.c5 { color: #9f1853; }
+  .ex-num.c6 { color: #da1e28; }
   .ex-title { font-size: 24px; font-weight: 300; color: #161616; letter-spacing: -.01em; }
   .ex-sub   { font-size: 14px; color: #525252; margin-top: 4px; }
 
@@ -224,7 +238,7 @@
   .real-world strong { color: #0043ce; display: block; margin-bottom: 4px; font-weight: 600; }
 
   .challenge { border: 1px solid #e0e0e0; overflow: hidden; margin: 24px 0 0; }
-  .challenge-header { background: #f6f2ff; border-bottom: 1px solid #d4bbff; padding: 8px 14px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: #6929c4; }
+  .challenge-header { background: #f4f4f4; border-bottom: 1px solid #e0e0e0; padding: 8px 14px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: #525252; }
   .challenge-body { padding: 14px 16px; font-size: 13px; background: #fff; }
   .challenge-body ol { padding-left: 18px; }
   .challenge-body li { margin-bottom: 6px; }
@@ -282,6 +296,8 @@
 <input class="page-radio" type="radio" name="page" id="p2">
 <input class="page-radio" type="radio" name="page" id="p3">
 <input class="page-radio" type="radio" name="page" id="p4">
+<input class="page-radio" type="radio" name="page" id="p5">
+<input class="page-radio" type="radio" name="page" id="p6">
 
 <div class="layout">
 
@@ -301,26 +317,38 @@
     </div>
     <div class="nav-item nav-item-1">
       <label for="p1">
-        <span class="nav-num blue">Exercise 1</span>
+        <span class="nav-num c1">Exercise 1</span>
         Package Checker
       </label>
     </div>
     <div class="nav-item nav-item-2">
       <label for="p2">
-        <span class="nav-num green">Exercise 2</span>
+        <span class="nav-num c2">Exercise 2</span>
         License Checker
       </label>
     </div>
     <div class="nav-item nav-item-3">
       <label for="p3">
-        <span class="nav-num orange">Exercise 3</span>
+        <span class="nav-num c3">Exercise 3</span>
         Version Sorter
       </label>
     </div>
     <div class="nav-item nav-item-4">
       <label for="p4">
-        <span class="nav-num purple">Exercise 4</span>
+        <span class="nav-num c4">Exercise 4</span>
         Copyright Finder
+      </label>
+    </div>
+    <div class="nav-item nav-item-5">
+      <label for="p5">
+        <span class="nav-num c5">Exercise 5</span>
+        Copyright Extractor
+      </label>
+    </div>
+    <div class="nav-item nav-item-6">
+      <label for="p6">
+        <span class="nav-num c6">Exercise 6</span>
+        Full Scan Report
       </label>
     </div>
   </nav>
@@ -337,41 +365,51 @@
         <div class="header">
           <span class="ibm-tag">IBM Hursley - SLSS Work Experience</span>
           <h1>Python Worksheet</h1>
-          <p>Security and Legal Scanning Services team &nbsp;·&nbsp; Four exercises, each one harder than the last</p>
+          <p>Security and Legal Scanning Services team &nbsp;·&nbsp; Six exercises, each one builds on the last</p>
         </div>
 
-        <p>Welcome. This worksheet has four Python exercises. Each one is based on a real problem the SLSS team works on. Work through them in order - each one introduces something new.</p>
+        <p>Welcome. This worksheet has six Python exercises. Each one is based on a real problem the SLSS team works on. Work through them in order - each one builds on the last.</p>
 
         <div class="run-note">
           <strong>Running your program:</strong> Press the triangle <strong>Run</strong> button in the top-right corner of VS Code. Run after every step to check it works before moving on.
         </div>
 
         <div class="contents-grid">
-          <label class="ci blue" for="p1">
-            <div class="ci-num blue">Exercise 1</div>
+          <label class="ci c1" for="p1">
+            <div class="ci-num c1">Exercise 1</div>
             <div class="ci-title">Package Checker</div>
             <div class="ci-desc">Input, if/else, lists - no files needed</div>
           </label>
-          <label class="ci green" for="p2">
-            <div class="ci-num green">Exercise 2</div>
+          <label class="ci c2" for="p2">
+            <div class="ci-num c2">Exercise 2</div>
             <div class="ci-title">License Checker</div>
             <div class="ci-desc">Reading a file, splitting lines, elif</div>
           </label>
-          <label class="ci orange" for="p3">
-            <div class="ci-num orange">Exercise 3</div>
+          <label class="ci c3" for="p3">
+            <div class="ci-num c3">Exercise 3</div>
             <div class="ci-title">Version Sorter</div>
             <div class="ci-desc">Writing a function, sorting, dictionaries</div>
           </label>
-          <label class="ci purple" for="p4">
-            <div class="ci-num purple">Exercise 4</div>
+          <label class="ci c4" for="p4">
+            <div class="ci-num c4">Exercise 4</div>
             <div class="ci-title">Copyright Finder</div>
             <div class="ci-desc">Functions, multiple files, writing output</div>
+          </label>
+          <label class="ci c5" for="p5">
+            <div class="ci-num c5">Exercise 5</div>
+            <div class="ci-title">Copyright Extractor</div>
+            <div class="ci-desc">Filtering lines, lists, functions, FSF boilerplate</div>
+          </label>
+          <label class="ci c6" for="p6">
+            <div class="ci-num c6">Exercise 6</div>
+            <div class="ci-title">Full Scan Report</div>
+            <div class="ci-desc">Combining all previous exercises into one tool</div>
           </label>
         </div>
 
         <div class="page-nav" style="margin-top:28px;">
           <div class="spacer"></div>
-          <label class="next" for="p1">Exercise 1: Package Checker &rarr;</label>
+          <label class="next" for="p1">Exercise 1: Package Checker &rarr; </label>
         </div>
         <footer>Generated with IBM bob, refined by Jonah</footer>
       </div>
@@ -381,8 +419,8 @@
       <!-- PAGE 1 — EXERCISE 1                      -->
       <!-- ════════════════════════════════════════ -->
       <div class="pg pg-1">
-        <div class="ex-header blue">
-          <div class="ex-num blue">Exercise 1</div>
+        <div class="ex-header c1">
+          <div class="ex-num c1">Exercise 1</div>
           <div class="ex-title">Package Checker</div>
           <div class="ex-sub">Ask the user for a software package name and check if it looks suspicious</div>
         </div>
@@ -515,8 +553,8 @@ problems = []
       <!-- PAGE 2 — EXERCISE 2                      -->
       <!-- ════════════════════════════════════════ -->
       <div class="pg pg-2">
-        <div class="ex-header green">
-          <div class="ex-num green">Exercise 2</div>
+        <div class="ex-header c2">
+          <div class="ex-num c2">Exercise 2</div>
           <div class="ex-title">License Checker</div>
           <div class="ex-sub">Read a list of packages from a file and flag any with missing or incomplete licenses</div>
         </div>
@@ -633,7 +671,7 @@ Total problems: 4</pre>
 
         <div class="real-world">
           <strong>How this connects to the SLSS team's work</strong>
-          The SLSS team's Bulk Clearance Tool scans thousands of packages and extracts their license. A known bug - one of the most tracked issues in the team's backlog - is that incomplete license identifiers like <code>"GPL"</code> or <code>"BSD"</code> are passed through without a warning. The code you have just written is the core of the fix.
+          The SLSS team's Bulk Clearance Tool scans thousands of packages and extracts their license. Issue #4325 in the team's tracker describes a real problem: when the tool finds a bare identifier like <code>"GPL"</code> or <code>"BSD"</code> it passes it through as if it were valid, but an analyst still has to go and check the source manually anyway - so it would be safer to leave it blank so nothing gets missed. The detection logic you wrote is the first step toward that fix.
         </div>
 
         <div class="challenge">
@@ -666,8 +704,8 @@ Total problems: 4</pre>
       <!-- PAGE 3 — EXERCISE 3                      -->
       <!-- ════════════════════════════════════════ -->
       <div class="pg pg-3">
-        <div class="ex-header orange">
-          <div class="ex-num orange">Exercise 3 - introduces functions</div>
+        <div class="ex-header c3">
+          <div class="ex-num c3">Exercise 3 - introduces functions</div>
           <div class="ex-title">Version Sorter</div>
           <div class="ex-sub">Sort a list of software versions into the correct order</div>
         </div>
@@ -814,7 +852,7 @@ numpy -- newest: 1.26.4</pre>
 
         <div class="page-nav">
           <label for="p2">&larr; Exercise 2</label>
-          <label class="next" for="p4">Exercise 4: Copyright Finder &rarr;</label>
+          <label class="next" for="p4">Exercise 4: Copyright Finder &rarr; </label>
         </div>
         <footer>Generated with IBM bob, refined by Jonah</footer>
       </div>
@@ -824,8 +862,8 @@ numpy -- newest: 1.26.4</pre>
       <!-- PAGE 4 — EXERCISE 4                      -->
       <!-- ════════════════════════════════════════ -->
       <div class="pg pg-4">
-        <div class="ex-header purple">
-          <div class="ex-num purple">Exercise 4 - introduces writing files</div>
+        <div class="ex-header c4">
+          <div class="ex-num c4">Exercise 4 - introduces writing files</div>
           <div class="ex-title">Copyright Finder</div>
           <div class="ex-sub">Search license files for copyright lines and save them to a report</div>
         </div>
@@ -989,7 +1027,411 @@ license3.txt
 
         <div class="page-nav">
           <label for="p3">&larr; Exercise 3</label>
-          <label class="next" for="p0">Back to Home &rarr;</label>
+          <label class="next" for="p5">Exercise 5: Copyright Extractor &rarr; </label>
+        </div>
+        <footer>Generated with IBM bob, refined by Jonah</footer>
+      </div>
+
+
+      <!-- ════════════════════════════════════════ -->
+      <!-- PAGE 5 — EXERCISE 5                      -->
+      <!-- ════════════════════════════════════════ -->
+      <div class="pg pg-5">
+        <div class="ex-header c5">
+          <div class="ex-num c5">Exercise 5 - filtering and lists</div>
+          <div class="ex-title">Copyright Extractor</div>
+          <div class="ex-sub">Read license files and extract copyright statements correctly - fixing a real bug in the Bulk Clearance Tool</div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Background</div>
+          <div class="section-body">
+            <p>When the SLSS team clears a package, they need two things from the source code: the <strong>license</strong> and the <strong>copyright statement</strong>. The Bulk Clearance Tool reads through downloaded license files and tries to extract copyright lines automatically.</p>
+            <p>But the tool has two known bugs that are open issues right now:</p>
+            <ol>
+              <li><strong>It only returns the last copyright line</strong> - if a file has multiple authors, only one is captured.</li>
+              <li><strong>It returns the wrong copyright</strong> - GPL/LGPL license texts themselves contain a line like <code>Copyright (C) 1989, 1991 Free Software Foundation, Inc.</code> This belongs to the license preamble, not the package, but the tool picks it up as if it were the package's copyright.</li>
+            </ol>
+            <p>In this exercise you will write a better copyright extractor that avoids both mistakes. Create a new file called <code>copyright_extractor.py</code>.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Data files</div>
+          <div class="section-body">
+            <p>Create three files alongside your script. These are based on the kinds of license files the Bulk Tool downloads from package source repositories.</p>
+            <p><strong>license_mit.txt</strong> - an MIT license with two copyright holders:</p>
+<pre class="light">MIT License
+
+Copyright (c) 2019, Alice Nguyen
+Copyright (c) 2021, Bob Okafor
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction.</pre>
+            <p><strong>license_gpl.txt</strong> - a GPL license. Note the FSF copyright in the preamble:</p>
+<pre class="light">GNU GENERAL PUBLIC LICENSE
+Version 2, June 1991
+
+Copyright (C) 1989, 1991 Free Software Foundation, Inc.
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
+
+Copyright (c) 2020, Priya Sharma
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License.</pre>
+            <p><strong>license_bsd.txt</strong> - a BSD license with no copyright line at all:</p>
+<pre class="light">BSD 2-Clause License
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following disclaimer.</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Part 1 - Collect all copyright lines</div>
+          <div class="section-body">
+            <p>The current Bulk Clearance Tool overwrites a single variable each time it finds "Copyright", so only the last line survives. Your fix: collect every matching line into a list instead. Copy this skeleton in and fill in the three gaps:</p>
+<pre>found = []
+
+<span class="keyword">with</span> <span class="func">open</span>(<span class="string">"license_mit.txt"</span>) <span class="keyword">as</span> f:
+    <span class="keyword">for</span> line <span class="keyword">in</span> f:
+        <span class="keyword">if</span> <span class="todo">???</span>:                    <span class="comment"># does this line contain "Copyright"?</span>
+            found.<span class="func">append</span>(<span class="todo">???</span>)   <span class="comment"># add it to the list (stripped)</span>
+
+<span class="keyword">if</span> <span class="todo">???</span>:                         <span class="comment"># is the list empty?</span>
+    <span class="func">print</span>(<span class="string">"No copyright found"</span>)
+<span class="keyword">else</span>:
+    <span class="keyword">for</span> line <span class="keyword">in</span> found:
+        <span class="func">print</span>(line)</pre>
+            <details class="tip-box">
+              <summary>Hint</summary>
+              <div class="box-body">
+                <p>Gap 1: use <code>in</code> to check if a word is inside a string - you did this in Exercise 2.</p>
+                <p>Gap 2: <code>.strip()</code> removes the newline at the end of each line - combine it with the append call.</p>
+                <p>Gap 3: <code>len(found) == 0</code> is true when the list has nothing in it.</p>
+              </div>
+            </details>
+            <details class="try-box">
+              <summary>Expected output</summary>
+              <div class="box-body">
+<pre class="light" style="margin-top:6px;">Copyright (c) 2019, Alice Nguyen
+Copyright (c) 2021, Bob Okafor</pre>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Part 2 - Filter out the FSF boilerplate</div>
+          <div class="section-body">
+            <p>Change the filename to <code>"license_gpl.txt"</code> and run it. You will see it picks up the FSF preamble line as well as the real author copyright - that is the second bug in the tool. The fix: add a second condition to skip any line that contains <code>"Free Software Foundation"</code>. Also change the <code>else</code> block to print everything joined on one line. Two gaps:</p>
+<pre>found = []
+
+<span class="keyword">with</span> <span class="func">open</span>(<span class="string">"license_gpl.txt"</span>) <span class="keyword">as</span> f:
+    <span class="keyword">for</span> line <span class="keyword">in</span> f:
+        <span class="keyword">if</span> <span class="string">"Copyright"</span> <span class="keyword">in</span> line <span class="keyword">and</span> <span class="todo">???</span>:   <span class="comment"># also check it is NOT the FSF line</span>
+            found.<span class="func">append</span>(line.<span class="func">strip</span>())
+
+<span class="keyword">if</span> len(found) == <span class="num">0</span>:
+    <span class="func">print</span>(<span class="string">"No copyright found"</span>)
+<span class="keyword">else</span>:
+    <span class="func">print</span>(<span class="todo">???</span>)   <span class="comment"># print all items joined with ", " between them</span></pre>
+            <details class="tip-box">
+              <summary>Hint</summary>
+              <div class="box-body">
+                <p>Gap 1: <code>not in</code> checks that something is absent from a string - the opposite of <code>in</code>.</p>
+                <p>Gap 2: <code>", ".join(found)</code> combines every item in the list into one string with <code>, </code> between them.</p>
+              </div>
+            </details>
+            <details class="try-box">
+              <summary>Expected output for license_gpl.txt</summary>
+              <div class="box-body">
+<pre class="light" style="margin-top:6px;">Copyright (c) 2020, Priya Sharma</pre>
+              </div>
+            </details>
+            <details class="try-box">
+              <summary>Expected output for license_bsd.txt</summary>
+              <div class="box-body">
+<pre class="light" style="margin-top:6px;">No copyright found</pre>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Part 3 - Wrap it in a function and handle all three files</div>
+          <div class="section-body">
+            <p>A function lets you reuse the same logic without copying it. The skeleton below shows the function signature and the loop that calls it - you need to write the entire function body yourself using the logic from Part 2. Two things change: the filename comes from the parameter, and instead of <code>print</code> at the end you use <code>return</code>.</p>
+<pre><span class="keyword">def</span> <span class="func">extract_copyright</span>(filename):
+    <span class="todo">???</span>   <span class="comment"># write the function body here - it should return the result string</span>
+
+files = [<span class="string">"license_mit.txt"</span>, <span class="string">"license_gpl.txt"</span>, <span class="string">"license_bsd.txt"</span>]
+<span class="keyword">for</span> filename <span class="keyword">in</span> files:
+    result = <span class="func">extract_copyright</span>(filename)
+    <span class="func">print</span>(filename + <span class="string">":"</span>, result)</pre>
+            <details class="tip-box">
+              <summary>Hint</summary>
+              <div class="box-body">Copy your Part 2 code inside the function (indented). The <code>open()</code> call uses <code>filename</code> instead of a hardcoded string. Replace the final <code>print(...)</code> with <code>return ...</code> - a function hands a value back with <code>return</code> rather than printing it directly.</div>
+            </details>
+            <details class="try-box">
+              <summary>Expected output</summary>
+              <div class="box-body">
+<pre class="light" style="margin-top:6px;">license_mit.txt: Copyright (c) 2019, Alice Nguyen, Copyright (c) 2021, Bob Okafor
+license_gpl.txt: Copyright (c) 2020, Priya Sharma
+license_bsd.txt: No copyright found</pre>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="real-world">
+          <strong>How this connects to the SLSS team's work</strong>
+          The Bulk Clearance Tool has two open issues right now - issue #4309 (only the last copyright line is captured) and issue #4330 (the FSF boilerplate from GPL licenses is returned as the package copyright). The logic you just wrote in Python fixes both. The team's Java tool uses exactly the same approach: read a file line by line, check for "Copyright", collect results into a list. Your Python solution is a working prototype of the fix.
+        </div>
+
+        <div class="challenge">
+          <div class="challenge-header">Part 4 - Challenge</div>
+          <div class="challenge-body">
+            <ol>
+              <li>
+                Some license files use lowercase <code>copyright</code> or <code>COPYRIGHT</code>. Update your function so it catches all of them regardless of case. Test it by adding a line like <code>copyright 2022 someone</code> to one of your files.
+                <details class="tip-box" style="margin-top:6px;">
+                  <summary>Hint</summary>
+                  <div class="box-body">Check <code>"copyright" in line.lower()</code> instead of <code>"Copyright" in line</code>. Do the same for the FSF check. <code>line.lower()</code> returns a copy of the line with all letters made lowercase.</div>
+                </details>
+              </li>
+              <li>
+                Write the results for all three files to a new file called <code>copyright_report.txt</code>. Each line in the report should be in the format: <code>filename: result</code>. Use the file-writing pattern from Exercise 4.
+              </li>
+              <li>
+                Create a fourth license file <code>license_lgpl.txt</code> that has two FSF boilerplate lines and one real author copyright. Confirm your function skips both FSF lines and returns only the real one.
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="page-nav">
+          <label for="p4">&larr; Exercise 4</label>
+          <label class="next" for="p6">Exercise 6: Full Scan Report &rarr; </label>
+        </div>
+        <footer>Generated with IBM bob, refined by Jonah</footer>
+      </div>
+
+
+      <!-- ════════════════════════════════════════ -->
+      <!-- PAGE 6 — EXERCISE 6                      -->
+      <!-- ════════════════════════════════════════ -->
+      <div class="pg pg-6">
+        <div class="ex-header c6">
+          <div class="ex-num c6">Exercise 6 - putting it all together</div>
+          <div class="ex-title">Full Scan Report</div>
+          <div class="ex-sub">Combine all your checks into one program that writes a complete report</div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Background</div>
+          <div class="section-body">
+            <p>In the real world, the SLSS team runs all of their checks together and produces a single report that an analyst can read. That report lists every problem found - missing licenses, incomplete licenses, pre-release versions, and missing copyright - with a summary at the end.</p>
+            <p>This exercise has no new Python concepts. You are going to reuse everything you have already written - the license check from Exercise 2, the version check from Exercise 3, and the copyright extractor from Exercise 5 - and wire them together into one tool.</p>
+            <div class="learn-box">
+              <strong>What you are building</strong>
+              A program that reads one data file containing all the information about a set of packages, runs three checks, and writes a structured <code>full_report.txt</code>. This is exactly the kind of script a real security analyst might write to automate their morning triage.
+            </div>
+            <p>Create a new file called <code>full_scan.py</code> and a data file called <code>packages_full.txt</code>.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Data file: packages_full.txt</div>
+          <div class="section-body">
+            <p>Each line is <code>name|version|license|copyright</code> - columns are separated by <code>|</code> so that copyright text (which often contains commas) does not break the split. A blank copyright field means none was found in the source.</p>
+<pre class="light">requests|2.31.0|Apache-2.0|Copyright (c) 2023 Kenneth Reitz
+flask|3.0.0|BSD-3-Clause|Copyright (c) 2010 Armin Ronacher
+numpy|1.26.4|BSD-3-Clause|Copyright (c) 2005-2024 NumPy Developers
+django|4.2.1|BSD|Copyright (c) Django Software Foundation
+cryptography|42.0.5|Apache-2.0|Copyright (c) 2013-2024 The cryptography authors
+pandas|2.2.0|BSD|Copyright (c) 2008-2024 AQR Capital Management
+scipy|1.12.0|BSD-3-Clause|
+pytest|8.0.0|MIT|Copyright (c) 2004 Holger Krekel
+colorama|0.4.6||
+pyyaml|6.0.1|MIT|</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Part 1 - Read and print the file</div>
+          <div class="section-body">
+            <p>You have read CSV files before. This one has four columns. Copy this in and run it to confirm the file is being read correctly:</p>
+<pre><span class="keyword">with</span> <span class="func">open</span>(<span class="string">"packages_full.txt"</span>) <span class="keyword">as</span> f:
+    <span class="keyword">for</span> line <span class="keyword">in</span> f:
+        parts     = line.<span class="func">strip</span>().<span class="func">split</span>(<span class="string">"|"</span>)
+        name      = parts[<span class="num">0</span>]
+        version   = parts[<span class="num">1</span>]
+        license   = parts[<span class="num">2</span>]
+        copyright = parts[<span class="num">3</span>]
+        <span class="func">print</span>(name, version, license, copyright)</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Part 2 - Add the license check</div>
+          <div class="section-body">
+            <p>You wrote this logic in Exercise 2. Extend the loop above to collect problem lines into a list called <code>license_problems</code>. Use the same <code>incomplete</code> list as before. Fill in the two gaps:</p>
+<pre>incomplete = [<span class="string">"GPL"</span>, <span class="string">"LGPL"</span>, <span class="string">"BSD"</span>, <span class="string">"Apache"</span>, <span class="string">"MPL"</span>, <span class="string">"AGPL"</span>]
+license_problems = []
+
+<span class="keyword">with</span> <span class="func">open</span>(<span class="string">"packages_full.txt"</span>) <span class="keyword">as</span> f:
+    <span class="keyword">for</span> line <span class="keyword">in</span> f:
+        parts    = line.<span class="func">strip</span>().<span class="func">split</span>(<span class="string">"|"</span>)
+        name     = parts[<span class="num">0</span>]
+        license  = parts[<span class="num">2</span>]
+
+        <span class="keyword">if</span> <span class="todo">???</span>:           <span class="comment"># blank license</span>
+            license_problems.<span class="func">append</span>(name + <span class="string">": MISSING license"</span>)
+        <span class="keyword">elif</span> <span class="todo">???</span>:         <span class="comment"># incomplete license</span>
+            license_problems.<span class="func">append</span>(name + <span class="string">": INCOMPLETE ("</span> + license + <span class="string">")"</span>)
+
+<span class="func">print</span>(<span class="string">"License problems:"</span>, license_problems)</pre>
+            <details class="tip-box">
+              <summary>Hint</summary>
+              <div class="box-body">These are the same two conditions you wrote in Exercise 2. Look back at your <code>license_checker.py</code> if you need a reminder.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Part 3 - Add the version and copyright checks</div>
+          <div class="section-body">
+            <p>Add two more problem lists: <code>version_problems</code> and <code>copyright_problems</code>. Extend your loop to also check each package. The structures are given - fill in the gaps using what you wrote in Exercises 3 and 5:</p>
+<pre><span class="keyword">def</span> <span class="func">version_key</span>(v):
+    parts = <span class="todo">???</span>
+    <span class="keyword">return</span> [<span class="func">int</span>(p) <span class="keyword">for</span> p <span class="keyword">in</span> parts]
+
+<span class="keyword">def</span> <span class="func">extract_copyright</span>(text):
+    <span class="comment"># adapted from Exercise 5 - this version takes a string (not a filename)</span>
+    <span class="comment"># and returns "" when nothing is found</span>
+    found = []
+    <span class="keyword">for</span> line <span class="keyword">in</span> text.<span class="func">splitlines</span>():
+        <span class="keyword">if</span> <span class="string">"Copyright"</span> <span class="keyword">in</span> line <span class="keyword">and</span> <span class="string">"Free Software Foundation"</span> <span class="keyword">not in</span> line:
+            found.<span class="func">append</span>(line.<span class="func">strip</span>())
+    <span class="keyword">return</span> <span class="string">", "</span>.<span class="func">join</span>(found)
+
+version_problems   = []
+copyright_problems = []
+
+<span class="keyword">with</span> <span class="func">open</span>(<span class="string">"packages_full.txt"</span>) <span class="keyword">as</span> f:
+    <span class="keyword">for</span> line <span class="keyword">in</span> f:
+        parts     = line.<span class="func">strip</span>().<span class="func">split</span>(<span class="string">"|"</span>)
+        name      = parts[<span class="num">0</span>]
+        version   = parts[<span class="num">1</span>]
+        copyright = parts[<span class="num">3</span>]
+
+        <span class="keyword">if</span> <span class="func">version_key</span>(version)[<span class="num">0</span>] == <span class="num">0</span>:
+            version_problems.<span class="func">append</span>(name + <span class="string">": pre-release ("</span> + version + <span class="string">")"</span>)
+
+        extracted = <span class="func">extract_copyright</span>(<span class="todo">???</span>)   <span class="comment"># run the copyright extractor on this package's copyright field</span>
+        <span class="keyword">if</span> <span class="todo">???</span>:                                <span class="comment"># no copyright found</span>
+            copyright_problems.<span class="func">append</span>(name + <span class="string">": MISSING copyright"</span>)</pre>
+            <details class="tip-box">
+              <summary>Hints</summary>
+              <div class="box-body">
+                <p>Gap 1: <code>version_key</code> - look back at your Exercise 3 solution. Split on <code>"."</code>.</p>
+                <p>Gap 2: pass the <code>copyright</code> variable to <code>extract_copyright</code>.</p>
+                <p>Gap 3: <code>extract_copyright</code> returns an empty string <code>""</code> when nothing is found - check for that.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Part 4 - Write the full report</div>
+          <div class="section-body">
+            <p>You now have three problem lists. Write them all to <code>full_report.txt</code> with headings and a summary count at the end. The structure is given - fill in the two gaps:</p>
+<pre><span class="keyword">with</span> <span class="func">open</span>(<span class="string">"full_report.txt"</span>, <span class="string">"w"</span>) <span class="keyword">as</span> report:
+    report.<span class="func">write</span>(<span class="string">"SLSS Scan Report\n"</span>)
+    report.<span class="func">write</span>(<span class="string">"================\n\n"</span>)
+
+    report.<span class="func">write</span>(<span class="string">"LICENSE PROBLEMS\n"</span>)
+    <span class="keyword">for</span> item <span class="keyword">in</span> license_problems:
+        report.<span class="func">write</span>(<span class="todo">???</span>)   <span class="comment"># write each item indented with "  "</span>
+    report.<span class="func">write</span>(<span class="string">"\n"</span>)
+
+    report.<span class="func">write</span>(<span class="string">"VERSION PROBLEMS\n"</span>)
+    <span class="keyword">for</span> item <span class="keyword">in</span> version_problems:
+        report.<span class="func">write</span>(<span class="string">"  "</span> + item + <span class="string">"\n"</span>)
+    report.<span class="func">write</span>(<span class="string">"\n"</span>)
+
+    report.<span class="func">write</span>(<span class="string">"COPYRIGHT PROBLEMS\n"</span>)
+    <span class="keyword">for</span> item <span class="keyword">in</span> copyright_problems:
+        report.<span class="func">write</span>(<span class="string">"  "</span> + item + <span class="string">"\n"</span>)
+    report.<span class="func">write</span>(<span class="string">"\n"</span>)
+
+    total = <span class="todo">???</span>   <span class="comment"># count all problems across all three lists</span>
+    report.<span class="func">write</span>(<span class="string">"TOTAL PROBLEMS: "</span> + <span class="func">str</span>(total) + <span class="string">"\n"</span>)
+
+<span class="func">print</span>(<span class="string">"Report saved to full_report.txt"</span>)</pre>
+            <details class="tip-box">
+              <summary>Hints</summary>
+              <div class="box-body">
+                <p>Gap 1: same pattern you used in Exercise 4 - combine the indent, the item, and a newline with <code>+</code>.</p>
+                <p>Gap 2: <code>len()</code> gives the count for one list. Add the counts from all three lists together.</p>
+              </div>
+            </details>
+            <details class="try-box">
+              <summary>Expected full_report.txt</summary>
+              <div class="box-body">
+<pre class="light" style="margin-top:6px;">SLSS Scan Report
+================
+
+LICENSE PROBLEMS
+  colorama: MISSING license
+  django: INCOMPLETE (BSD)
+  pandas: INCOMPLETE (BSD)
+
+VERSION PROBLEMS
+  colorama: pre-release (0.4.6)
+
+COPYRIGHT PROBLEMS
+  pyyaml: MISSING copyright
+  scipy: MISSING copyright
+
+TOTAL PROBLEMS: 7</pre>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="real-world">
+          <strong>How this connects to the SLSS team's work</strong>
+          The three checks in this report - incomplete license, pre-release version, and missing copyright - are the exact checks that flag a package for manual review before clearance. Issue #4325 in the team's tracker is about bare identifiers like <code>"BSD"</code> being passed through silently - your license check catches exactly those. Issue #4309 is about copyright lines being overwritten - your copyright check catches the result of that bug. Every item in your report corresponds to a real defect an analyst would have to investigate.
+        </div>
+
+        <div class="challenge">
+          <div class="challenge-header">Part 5 - Challenge</div>
+          <div class="challenge-body">
+            <ol>
+              <li>
+                Update <code>extract_copyright</code> to also catch lowercase <code>copyright</code> (the case-insensitive improvement from Exercise 5 Part 4).
+              </li>
+              <li>
+                Add a section to the report that lists packages flagged by more than one check - these are the highest priority to fix.
+                <details class="tip-box" style="margin-top:6px;">
+                  <summary>Hint</summary>
+                  <div class="box-body">Extract just the package name from each item in each list (the part before the <code>:</code>). A name that appears in two or more lists needs flagging. You could use a <code>dict</code> to count how many times each name appears.</div>
+                </details>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="page-nav">
+          <label for="p5">&larr; Exercise 5</label>
+          <label class="next" for="p0">Back to Home &rarr; </label>
         </div>
         <footer>Generated with IBM bob, refined by Jonah</footer>
       </div>
@@ -1012,7 +1454,7 @@ license3.txt
   // ── Progress bar ──
   var radios = document.querySelectorAll('.page-radio');
   var fill   = document.getElementById('progress-bar-fill');
-  var steps  = { p0: 0, p1: 25, p2: 50, p3: 75, p4: 100 };
+  var steps  = { p0: 0, p1: 17, p2: 34, p3: 51, p4: 68, p5: 85, p6: 100 };
   function updateProgress() {
     for (var i = 0; i < radios.length; i++) {
       if (radios[i].checked) {
