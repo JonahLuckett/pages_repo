@@ -65,6 +65,8 @@
   .nav-item .nav-num.c4 { color: #f1c21b; }
   .nav-item .nav-num.c5 { color: #ee5396; }
   .nav-item .nav-num.c6 { color: #ff8389; }
+  .nav-item .nav-num.c7 { color: #d4bbff; }
+  .nav-item .nav-num.c8 { color: #bae6ff; }
   .nav-item .nav-num.home { color: #6f6f6f; }
 
   /* Active sidebar item per page */
@@ -74,7 +76,9 @@
   #p3:checked ~ .layout .nav-item-3 label,
   #p4:checked ~ .layout .nav-item-4 label,
   #p5:checked ~ .layout .nav-item-5 label,
-  #p6:checked ~ .layout .nav-item-6 label {
+  #p6:checked ~ .layout .nav-item-6 label,
+  #p7:checked ~ .layout .nav-item-7 label,
+  #p8:checked ~ .layout .nav-item-8 label {
     background: #262626; color: #f4f4f4; border-left-color: #0f62fe;
   }
 
@@ -98,6 +102,8 @@
   #p4:checked ~ .layout .pg-4 { display: block; animation: pgIn .18s ease; }
   #p5:checked ~ .layout .pg-5 { display: block; animation: pgIn .18s ease; }
   #p6:checked ~ .layout .pg-6 { display: block; animation: pgIn .18s ease; }
+  #p7:checked ~ .layout .pg-7 { display: block; animation: pgIn .18s ease; }
+  #p8:checked ~ .layout .pg-8 { display: block; animation: pgIn .18s ease; }
   @keyframes pgIn {
     from { opacity: 0; transform: translateY(6px); }
     to   { opacity: 1; transform: translateY(0);   }
@@ -125,6 +131,8 @@
   .ci.c4 { border-left-color: #b28600; }
   .ci.c5 { border-left-color: #9f1853; }
   .ci.c6 { border-left-color: #da1e28; }
+  .ci.c7 { border-left-color: #6929c4; }
+  .ci.c8 { border-left-color: #00539a; }
   .ci-num { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; }
   .ci-num.c1 { color: #0f62fe; }
   .ci-num.c2 { color: #007d79; }
@@ -132,6 +140,8 @@
   .ci-num.c4 { color: #b28600; }
   .ci-num.c5 { color: #9f1853; }
   .ci-num.c6 { color: #da1e28; }
+  .ci-num.c7 { color: #6929c4; }
+  .ci-num.c8 { color: #00539a; }
   .ci-title { font-size: 16px; font-weight: 400; color: #161616; }
   .ci-desc  { font-size: 12px; color: #525252; margin-top: 4px; }
 
@@ -143,6 +153,8 @@
   .ex-header.c4 { background: #fdf6dd; border-color: #b28600; }
   .ex-header.c5 { background: #fff0f6; border-color: #9f1853; }
   .ex-header.c6 { background: #fff1f1; border-color: #da1e28; }
+  .ex-header.c7 { background: #f6f2ff; border-color: #6929c4; }
+  .ex-header.c8 { background: #e5f6ff; border-color: #00539a; }
   .ex-num { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; margin-bottom: 6px; }
   .ex-num.c1 { color: #0f62fe; }
   .ex-num.c2 { color: #007d79; }
@@ -150,6 +162,8 @@
   .ex-num.c4 { color: #b28600; }
   .ex-num.c5 { color: #9f1853; }
   .ex-num.c6 { color: #da1e28; }
+  .ex-num.c7 { color: #6929c4; }
+  .ex-num.c8 { color: #00539a; }
   .ex-title { font-size: 24px; font-weight: 300; color: #161616; letter-spacing: -.01em; }
   .ex-sub   { font-size: 14px; color: #525252; margin-top: 4px; }
 
@@ -256,6 +270,10 @@
   .page-nav label:active { transform: translateY(1px); box-shadow: none; }
   .page-nav label.next { background: #0f62fe; color: #ffffff; border-color: #0f62fe; font-weight: 600; }
   .page-nav label.next:hover { background: #0353e9; border-color: #0353e9; }
+  .page-nav label.next.c7 { background: #6929c4; border-color: #6929c4; }
+  .page-nav label.next.c7:hover { background: #491d8b; border-color: #491d8b; }
+  .page-nav label.next.c8 { background: #00539a; border-color: #00539a; }
+  .page-nav label.next.c8:hover { background: #003a6c; border-color: #003a6c; }
   .page-nav .spacer { flex: 1; }
 
   /* ── Run note ── */
@@ -298,6 +316,8 @@
 <input class="page-radio" type="radio" name="page" id="p4">
 <input class="page-radio" type="radio" name="page" id="p5">
 <input class="page-radio" type="radio" name="page" id="p6">
+<input class="page-radio" type="radio" name="page" id="p7">
+<input class="page-radio" type="radio" name="page" id="p8">
 
 <div class="layout">
 
@@ -351,6 +371,18 @@
         Full Scan Report
       </label>
     </div>
+    <div class="nav-item nav-item-7">
+      <label for="p7">
+        <span class="nav-num c7">Exercise 7</span>
+        Git and GitHub
+      </label>
+    </div>
+    <div class="nav-item nav-item-8">
+      <label for="p8">
+        <span class="nav-num c8">Exercise 8</span>
+        Writing a README
+      </label>
+    </div>
   </nav>
 
   <!-- ── Main ── -->
@@ -365,10 +397,10 @@
         <div class="header">
           <span class="ibm-tag">IBM Hursley - SLSS Work Experience</span>
           <h1>Python Worksheet</h1>
-          <p>Security and Legal Scanning Services team &nbsp;·&nbsp; Six exercises, each one builds on the last</p>
+          <p>Security and Legal Scanning Services team &nbsp;·&nbsp; Eight exercises, each one builds on the last</p>
         </div>
 
-        <p>Welcome. This worksheet has six Python exercises. Each one is based on a real problem the SLSS team works on. Work through them in order - each one builds on the last.</p>
+        <p>Welcome. This worksheet has eight exercises. Exercises 1 to 6 are Python programs. Exercises 7 and 8 move to the real developer workflow: using Git and writing the kind of documentation the team produces. Work through them in order - each one builds on the last.</p>
 
         <div class="run-note">
           <strong>Running your program:</strong> Press the triangle <strong>Run</strong> button in the top-right corner of VS Code. Run after every step to check it works before moving on.
@@ -404,6 +436,16 @@
             <div class="ci-num c6">Exercise 6</div>
             <div class="ci-title">Full Scan Report</div>
             <div class="ci-desc">Combining all previous exercises into one tool</div>
+          </label>
+          <label class="ci c7" for="p7">
+            <div class="ci-num c7">Exercise 7</div>
+            <div class="ci-title">Git and GitHub</div>
+            <div class="ci-desc">Clone, branch, commit, push, open a pull request</div>
+          </label>
+          <label class="ci c8" for="p8">
+            <div class="ci-num c8">Exercise 8</div>
+            <div class="ci-title">Writing a README</div>
+            <div class="ci-desc">Document your work and raise a second pull request</div>
           </label>
         </div>
 
@@ -1431,7 +1473,372 @@ TOTAL PROBLEMS: 7</pre>
 
         <div class="page-nav">
           <label for="p5">&larr; Exercise 5</label>
-          <label class="next" for="p0">Back to Home &rarr; </label>
+          <label class="next" for="p7">Exercise 7: Git and GitHub &rarr; </label>
+        </div>
+        <footer>Generated with IBM bob, refined by Jonah</footer>
+      </div>
+
+
+      <!-- ════════════════════════════════════════ -->
+      <!-- PAGE 7 — EXERCISE 7                      -->
+      <!-- ════════════════════════════════════════ -->
+      <div class="pg pg-7">
+        <div class="ex-header c7">
+          <div class="ex-num c7">Exercise 7 - working like a developer</div>
+          <div class="ex-title">Git and GitHub</div>
+          <div class="ex-sub">Clone a repository, save your work on a branch, and open a pull request</div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Background</div>
+          <div class="section-body">
+            <p>Every piece of code the SLSS team writes lives in a Git repository. When a developer fixes a bug, they do not edit the main codebase directly - they create a <strong>branch</strong>, make their changes there, then open a <strong>pull request</strong> so a colleague can review the work before it is merged.</p>
+            <p>In this exercise you will put your own solution files from the previous exercises into the shared work experience repository on GitHub, exactly the way a developer on the team would contribute a fix.</p>
+            <div class="learn-box">
+              <strong>Key concepts</strong>
+              <strong>Repository</strong> - a folder that Git tracks. Every change is recorded.<br>
+              <strong>Clone</strong> - download a repository from GitHub to your machine.<br>
+              <strong>Branch</strong> - a separate line of work. Changes on a branch do not affect <code>main</code> until merged.<br>
+              <strong>Commit</strong> - a saved snapshot of your changes with a message describing what you did.<br>
+              <strong>Push</strong> - upload your commits to GitHub.<br>
+              <strong>Pull request (PR)</strong> - a request to merge your branch into <code>main</code>, with a description of what changed and why.
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Part 1 - Accept the invite and clone the repository</div>
+          <div class="section-body">
+            <p>You should have received an email invite to <strong>JonahLuckett/SLSS-WEX-Exercises</strong> on GitHub. Accept it, then open a terminal in VS Code (<strong>Terminal &gt; New Terminal</strong>) and run:</p>
+<pre class="light">git clone https://github.com/JonahLuckett/SLSS-WEX-Exercises.git
+cd SLSS-WEX-Exercises</pre>
+            <p>This downloads the repository to your machine and moves you into it. Run <code>dir</code> to see the files already in there - you should see a <code>README.md</code>, a <code>CHANGELOG.md</code>, and three folders: <code>guru</code>, <code>sid</code>, and <code>harvie</code>. One of those is yours.</p>
+            <details class="tip-box">
+              <summary>Hint</summary>
+              <div class="box-body">If Git asks for a username and password, use your GitHub username and a personal access token (not your password). You can create one at <a href="https://github.com/settings/tokens" target="_blank">github.com/settings/tokens</a> - give it the <code>repo</code> scope.</div>
+            </details>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Part 2 - Create a branch with your name</div>
+          <div class="section-body">
+            <p>Never commit directly to <code>main</code>. Create your own branch first. Your branch name is your first name, all lowercase - so one of <code>guru</code>, <code>sid</code>, or <code>harvie</code>:</p>
+<pre class="light">git checkout -b your-name</pre>
+            <p>You are now on your own branch. Anything you commit here is completely separate from other people's work until it is merged.</p>
+            <details class="try-box">
+              <summary>Check it worked</summary>
+              <div class="box-body">Run <code>git branch</code>. You should see your branch name listed with a <code>*</code> next to it.</div>
+            </details>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Part 3 - Add your files to your folder</div>
+          <div class="section-body">
+            <p>Your folder already exists in the repository (<code>guru/</code>, <code>sid/</code>, or <code>harvie/</code>). Copy your Python solution files into it. The files you should have from Exercises 1 to 6 are:</p>
+<pre class="light">package_checker.py
+license_checker.py
+version_sorter.py
+copyright_finder.py
+copyright_extractor.py
+full_scan.py</pre>
+            <p>Drag them in using VS Code's Explorer panel. Once they are in your folder, stage them - replace <code>your-name</code> with <code>guru</code>, <code>sid</code>, or <code>harvie</code>:</p>
+<pre class="light">git add your-name/</pre>
+            <details class="try-box">
+              <summary>Check it worked</summary>
+              <div class="box-body">Run <code>git status</code>. Your files should appear under "Changes to be committed" in green.</div>
+            </details>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Part 4 - Commit and push</div>
+          <div class="section-body">
+            <p>A commit saves a snapshot of your staged changes with a message explaining what you did. Keep the message short and factual:</p>
+<pre class="light">git commit -m "Add your-name's exercise solutions"
+git push origin your-name</pre>
+            <details class="tip-box">
+              <summary>Hint</summary>
+              <div class="box-body">If Git says the branch has no upstream, run: <code>git push --set-upstream origin your-name</code></div>
+            </details>
+            <details class="try-box">
+              <summary>Check it worked</summary>
+              <div class="box-body">Go to <a href="https://github.com/JonahLuckett/SLSS-WEX-Exercises" target="_blank">github.com/JonahLuckett/SLSS-WEX-Exercises</a>. You should see a yellow banner saying your branch was recently pushed.</div>
+            </details>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Part 5 - Open a pull request</div>
+          <div class="section-body">
+            <p>Click <strong>Compare and pull request</strong> on the GitHub page. Fill in the PR as follows.</p>
+            <p><strong>Title</strong> - the format is a tag in square brackets followed by a short description:</p>
+<pre class="light">[patch] Add your-name's exercise solutions</pre>
+            <p><strong>Description</strong> - the text box on the GitHub PR page uses <strong>Markdown</strong>, a lightweight way of formatting plain text. A word wrapped in <code>**double asterisks**</code> goes bold, a line starting with <code>-</code> becomes a bullet, and a line starting with <code>####</code> becomes a heading. You do not need to learn it now - just follow the template below and the formatting will work automatically.</p>
+            <p>The three issue numbers are pre-filled because you already know which bugs your programs address: #4309 (copyright extractor only kept the last line), #4330 (FSF boilerplate returned as package copyright), and #4325 (bare license identifiers passed through without warning). The first bullet point is written for you as an example - write the rest yourself:</p>
+<pre class="light">#### Changes:
+- Added package_checker.py - flags package names that are too short or
+  contain a space, and checks against a list of known typosquatting fakes
+- Added license_checker.py - ???
+- Added version_sorter.py - ???
+- Added copyright_finder.py - ???
+- Added copyright_extractor.py - ???
+- Added full_scan.py - ???
+
+#### Relevant Issue(s):
+- https://github.ibm.com/ptc-hursley/tools/issues/4309
+- https://github.ibm.com/ptc-hursley/tools/issues/4325
+- https://github.ibm.com/ptc-hursley/tools/issues/4330</pre>
+            <p>Replace each <code>???</code> with your own description, and make sure to include what the challenge extension did in the same bullet.</p>
+            <details class="tip-box">
+              <summary>Markdown cheatsheet</summary>
+              <div class="box-body">
+                <p>These are the Markdown elements used in the PR description above:</p>
+                <table style="border-collapse:collapse;width:100%;font-size:13px;">
+                  <tr style="background:#f4f4f4;">
+                    <th style="text-align:left;padding:6px 10px;border:1px solid #e0e0e0;">You type</th>
+                    <th style="text-align:left;padding:6px 10px;border:1px solid #e0e0e0;">What it looks like</th>
+                  </tr>
+                  <tr>
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;font-family:monospace;">#### Heading</td>
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;"><strong>Heading</strong></td>
+                  </tr>
+                  <tr style="background:#f9f9f9;">
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;font-family:monospace;">## Section heading</td>
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;"><strong style="font-size:15px;">Section heading</strong></td>
+                  </tr>
+                  <tr>
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;font-family:monospace;">**bold text**</td>
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;"><strong>bold text</strong></td>
+                  </tr>
+                  <tr style="background:#f9f9f9;">
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;font-family:monospace;">- bullet item</td>
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;">- bullet item</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;font-family:monospace;">`code`</td>
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;"><code>code</code></td>
+                  </tr>
+                  <tr style="background:#f9f9f9;">
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;font-family:monospace;">blank line between paragraphs</td>
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;">starts a new paragraph</td>
+                  </tr>
+                </table>
+                <p style="margin-top:10px;">GitHub renders the Markdown automatically when you save the PR description - you can see the preview by clicking the <strong>Preview</strong> tab above the text box before you submit.</p>
+              </div>
+            </details>
+            <p><strong>Reviewer</strong> - on the right-hand side of the PR page, under <strong>Reviewers</strong>, click the gear icon and type <code>JonahLuckett</code> to request a review.</p>
+            <p>Once the PR is open and the reviewer is assigned, leave it open and move on to Exercise 8.</p>
+            <details class="try-box">
+              <summary>What real PRs on this team look like</summary>
+              <div class="box-body">
+                <p><strong>PR #1202 - NST scanner</strong> - title: <code>[patch] reorder complete() function</code></p>
+<pre class="light">#### Changes:
+- Reordering the calling of the complete() function to be after the
+  results.json and csar xml generation/population
+- The complete() function contains the code that removes the meta
+  directory so this means the meta directory is always deleted after
+  the csar and json exports
+- Moving variable declaration clean: bool to reflect later use
+
+#### Relevant Issue(s):
+- https://github.ibm.com/ptc-hursley/tools/issues/4263</pre>
+                <p><strong>PR #747 - Taskrunner</strong> - title: <code>[patch] NST Console Timestamp Formatting Fix</code></p>
+<pre class="light">#### Changes:
+- Added formatNstDate and formatNstTime utility functions to common.ts
+  to format dates as YYYYMMDD and times as HHMMSS
+- Integrated the new functions into four files: common.ts,
+  process-nst-scan.ts, process-nst-compare.ts, and tasks.ts
+- Transforms timestamps from 2024-08-22_08-36-40 to 20240822_083640,
+  matching the standalone NST application format
+
+#### Relevant Issue(s):
+- https://github.ibm.com/ptc-hursley/tools/issues/4090</pre>
+                <p>Both use the same structure: a tag in the title, a <code>#### Changes:</code> section with verb-first bullets, and a <code>#### Relevant Issue(s):</code> section. Your PR follows this same format.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="real-world">
+          <strong>How this connects to the SLSS team's work</strong>
+          Every fix to the Bulk Clearance Tool, every new feature in NST, every infrastructure change goes through this exact process. The three issue numbers in your PR - #4309, #4325, and #4330 - are real open bugs in the Bulk Clearance Tool. The Python programs you wrote this week are working prototypes of the fixes. A developer on the team could take your logic, convert it to Java, and close those issues.
+        </div>
+
+        <div class="page-nav">
+          <label for="p6">&larr; Exercise 6</label>
+          <label class="next c7" for="p8">Exercise 8: Writing a README &rarr; </label>
+        </div>
+        <footer>Generated with IBM bob, refined by Jonah</footer>
+      </div>
+
+
+      <!-- ════════════════════════════════════════ -->
+      <!-- PAGE 8 — EXERCISE 8                      -->
+      <!-- ════════════════════════════════════════ -->
+      <div class="pg pg-8">
+        <div class="ex-header c8">
+          <div class="ex-num c8">Exercise 8 - documentation</div>
+          <div class="ex-title">Writing a README</div>
+          <div class="ex-sub">Open a second pull request that documents what you built and why</div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Background</div>
+          <div class="section-body">
+            <p>A README is often the first thing a developer reads when they open a project or folder. It explains what the code does, why it exists, and how to use it. Good documentation is as important as good code - a well-written README lets someone else pick up your work without needing to ask you any questions.</p>
+            <p>In this exercise you will add a <code>README.md</code> file to your folder on a new branch and open a new PR - separate from the one you raised in Exercise 7.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Part 1 - Switch to your solutions branch</div>
+          <div class="section-body">
+            <p>The README needs its own branch. Start from <code>main</code> so the branch is clean:</p>
+<pre class="light">git checkout main
+git checkout -b your-name-readme</pre>
+            <details class="try-box">
+              <summary>Check it worked</summary>
+              <div class="box-body">Run <code>git branch</code>. You should see <code>your-name-readme</code> listed with a <code>*</code> next to it.</div>
+            </details>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Part 2 - Write your README</div>
+          <div class="section-body">
+            <p>Create a new file called <code>README.md</code> inside your folder (in VS Code: right-click your folder in the Explorer panel and choose <strong>New File</strong>). Copy the skeleton below in as a starting point.</p>
+            <p>The first program entry is complete so you can see exactly what the format looks like. For the rest, the Markdown formatting has been removed - you need to add it yourself before filling in the description. Use the hint below if you are not sure what to add.</p>
+<pre class="light"># Your Name - SLSS Work Experience
+
+## What I built
+
+During work experience at IBM Hursley with the SLSS team, I wrote six Python
+programs that replicate checks the team's Bulk Clearance Tool runs on open
+source packages before they are approved for use.
+
+## Programs
+
+**package_checker.py** - Asks the user to type a package name and checks
+whether it looks suspicious - too short, contains a space, or matches a list
+of known fake packages that attackers publish to trick developers.
+
+license_checker.py - ???
+
+version_sorter.py - ???
+
+copyright_finder.py - ???
+
+copyright_extractor.py - ???
+
+full_scan.py - ???
+
+## What I learned
+
+???
+
+## What I would do next
+
+???
+???</pre>
+            <p>For each of the five remaining programs: add the Markdown formatting to match the first entry, then replace the <code>???</code> with your own description. One or two sentences is enough. For "What I would do next", turn the two lines into a proper bullet list.</p>
+            <details class="tip-box">
+              <summary>Markdown cheatsheet</summary>
+              <div class="box-body">
+                <p>These are all the Markdown elements you need for this README:</p>
+                <table style="border-collapse:collapse;width:100%;font-size:13px;">
+                  <tr style="background:#f4f4f4;">
+                    <th style="text-align:left;padding:6px 10px;border:1px solid #e0e0e0;">You type</th>
+                    <th style="text-align:left;padding:6px 10px;border:1px solid #e0e0e0;">What it looks like</th>
+                  </tr>
+                  <tr>
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;font-family:monospace;"># Big heading</td>
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;"><strong style="font-size:16px;">Big heading</strong></td>
+                  </tr>
+                  <tr style="background:#f9f9f9;">
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;font-family:monospace;">## Section heading</td>
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;"><strong>Section heading</strong></td>
+                  </tr>
+                  <tr>
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;font-family:monospace;">**bold text**</td>
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;"><strong>bold text</strong></td>
+                  </tr>
+                  <tr style="background:#f9f9f9;">
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;font-family:monospace;">- bullet item</td>
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;">- bullet item</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;font-family:monospace;">`code`</td>
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;"><code>code</code></td>
+                  </tr>
+                  <tr style="background:#f9f9f9;">
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;font-family:monospace;">blank line between paragraphs</td>
+                    <td style="padding:6px 10px;border:1px solid #e0e0e0;">starts a new paragraph</td>
+                  </tr>
+                </table>
+                <p style="margin-top:10px;">To preview how your file looks: open <code>README.md</code> in VS Code, then press <strong>Ctrl+Shift+V</strong>. A formatted preview opens beside the file.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Part 3 - Commit, push, and open the PR</div>
+          <div class="section-body">
+            <p>Stage, commit, and push your README to the new branch:</p>
+<pre class="light">git add your-name/README.md
+git commit -m "Add your-name's README"
+git push origin your-name-readme</pre>
+            <p>Open a new pull request on GitHub - this is a separate PR from the one in Exercise 7. Use this title and description:</p>
+<pre class="light">Title: [docs] Add your-name's README
+
+#### Changes:
+- Added README.md to your-name/ describing the six exercise solutions,
+  what each program does, and what was learned during work experience
+
+#### Relevant Issue(s):
+- https://github.ibm.com/ptc-hursley/tools/issues/4309
+- https://github.ibm.com/ptc-hursley/tools/issues/4325
+- https://github.ibm.com/ptc-hursley/tools/issues/4330</pre>
+            <p>Request a review from <code>JonahLuckett</code>.</p>
+          </div>
+        </div>
+
+        <div class="real-world">
+          <strong>How this connects to the SLSS team's work</strong>
+          Every tool the SLSS team maintains has a README. When a new developer joins the team, the README is how they understand what a tool does before reading a single line of code. Most of the time on this team the README goes into the same PR as the code it documents - it is part of the same change and gets reviewed together.
+        </div>
+
+        <div class="challenge">
+          <div class="challenge-header">Challenge - Find a bug in your own code and fix it</div>
+          <div class="challenge-body">
+            <p>Look back through your six programs. Every program has edge cases - situations the code was not written to handle, where the input is unusual or unexpected and the program either crashes or produces the wrong result. Your job is to find one, fix it, and submit the fix as a third PR.</p>
+            <p>Here are some real weaknesses to look for:</p>
+            <ul>
+              <li><strong>license_checker.py</strong> - what happens if a line in <code>packages.txt</code> has a trailing space after the license, such as <code>"MIT "</code>? The incomplete check would miss it because <code>"MIT " in incomplete</code> is false. Can you strip whitespace from the license before checking?</li>
+              <li><strong>copyright_extractor.py</strong> - what happens if the license file is completely empty? Does your code crash or print something sensible?</li>
+              <li><strong>version_sorter.py</strong> - what happens if a version string has only two parts, like <code>"1.0"</code> instead of <code>"1.0.0"</code>? Does your sort function still work?</li>
+              <li><strong>full_scan.py</strong> - what if a copyright field contains the word "Copyright" twice on the same line? Does the extractor duplicate it?</li>
+            </ul>
+            <p>Pick one, reproduce the bug by adding a test case to your data file, then fix the code. Once it works:</p>
+            <ol>
+              <li>Create a new branch: <code>git checkout -b your-name-bugfix</code></li>
+              <li>Commit the fixed file and the updated data file.</li>
+              <li>Open a PR with a title like <code>[fix] Handle trailing whitespace in license_checker</code> and a description that says what the bug was, what input triggered it, and what you changed.</li>
+              <li>Request a review from <code>JonahLuckett</code>.</li>
+            </ol>
+            <details class="tip-box">
+              <summary>Hint</summary>
+              <div class="box-body">The best way to confirm a bug exists before fixing it is to make it fail first. Add the problem input to your data file and run the program. If it produces wrong output or crashes, you have reproduced the bug. Then fix the code and run it again to confirm the output is now correct.</div>
+            </details>
+            <p style="margin-top:10px;">Once you have fixed one and raised the PR, go back to the list and work through the others if you have time. Each one is a separate fix on a separate branch.</p>
+          </div>
+        </div>
+
+        <div class="page-nav">
+          <label for="p7">&larr; Exercise 7</label>
+          <label class="next c8" for="p0">Back to Home &rarr; </label>
         </div>
         <footer>Generated with IBM bob, refined by Jonah</footer>
       </div>
@@ -1454,7 +1861,7 @@ TOTAL PROBLEMS: 7</pre>
   // ── Progress bar ──
   var radios = document.querySelectorAll('.page-radio');
   var fill   = document.getElementById('progress-bar-fill');
-  var steps  = { p0: 0, p1: 17, p2: 34, p3: 51, p4: 68, p5: 85, p6: 100 };
+  var steps  = { p0: 0, p1: 13, p2: 25, p3: 38, p4: 50, p5: 63, p6: 75, p7: 88, p8: 100 };
   function updateProgress() {
     for (var i = 0; i < radios.length; i++) {
       if (radios[i].checked) {
